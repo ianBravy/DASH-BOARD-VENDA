@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Vendas - XRM Advocacia</title>
+    <link rel="stylesheet" href="styles.css?v=202509102130">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">AD</div>
+                <div class="company-info">
+                    <h1>DA SESSÃO DE VIABILIDADE</h1>
+                    <p>Setembro de 2025 - XRM Advocacia</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+        <!-- Search and Filters Section -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Buscar Lead</h3>
+                    <input type="text" placeholder="Clique para buscar..." class="search-input">
+                </div>
+                <div class="search-item">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Período</h3>
+                    <select class="search-select">
+                        <option>Todo período</option>
+                        <option>Últimos 7 dias</option>
+                        <option>Últimos 30 dias</option>
+                        <option>Últimos 90 dias</option>
+                    </select>
+                </div>
+                <div class="search-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Fonte</h3>
+                    <select class="search-select">
+                        <option>Todas as fontes</option>
+                        <option>Google</option>
+                        <option>Facebook</option>
+                        <option>Instagram</option>
+                        <option>Meta</option>
+                        <option>Formulário</option>
+                    </select>
+                </div>
+                <button class="clear-btn">
+                    <i class="fas fa-times"></i>
+                    LIMPAR
+                </button>
+            </div>
+        </section>
+
+        <!-- Main Metrics Cards -->
+        <section class="metrics-section">
+            <div class="metrics-grid">
+                <div class="metric-card clickable-card" data-metric="total-leads">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-value">8,247</div>
+                    <div class="metric-label">TOTAL LEADS</div>
+                </div>
+                <div class="metric-card clickable-card" data-metric="whatsapp-validos">
+                    <div class="metric-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="metric-value">92.7%</div>
+                    <div class="metric-label">WPP VÁLIDOS</div>
+                </div>
+                <div class="metric-card clickable-card" data-metric="entrou-grupo">
+                    <div class="metric-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="metric-value">68.5%</div>
+                    <div class="metric-label">ENTROU EM GRUPO</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion Metrics -->
+        <section class="conversion-section">
+            <div class="conversion-grid">
+                <div class="conversion-card clickable-card" data-metric="pre-checkout">
+                    <div class="conversion-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="conversion-value">1</div>
+                    <div class="conversion-label">PRÉ-CHECKOUT</div>
+                </div>
+                <div class="conversion-card clickable-card" data-metric="vendas">
+                    <div class="conversion-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="conversion-value">1</div>
+                    <div class="conversion-label">VENDAS</div>
+                </div>
+                <div class="conversion-card clickable-card" data-metric="conversao-final">
+                    <div class="conversion-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="conversion-value">0.012%</div>
+                    <div class="conversion-label">CONVERSÃO FINAL</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="charts-grid">
+                <div class="chart-container clickable-card" data-metric="evolucao-data">
+                    <h3>EVOLUÇÃO POR DATA</h3>
+                    <canvas id="evolutionChart"></canvas>
+                </div>
+                <div class="chart-container clickable-card" data-metric="distribuicao-fonte">
+                    <h3>DISTRIBUIÇÃO POR FONTE</h3>
+                    <canvas id="sourceChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversion Funnel -->
+        <section class="funnel-section">
+            <div class="funnel-container clickable-card" data-metric="funil-conversao">
+                <h3>FUNIL DE CONVERSÃO</h3>
+                <div class="funnel">
+                    <div class="funnel-step step-1">
+                        <div class="funnel-number">8,247</div>
+                        <div class="funnel-label">LEADS</div>
+                        <div class="funnel-percentage">100%</div>
+                    </div>
+                    <div class="funnel-step step-2">
+                        <div class="funnel-number">1</div>
+                        <div class="funnel-label">PRÉ-CHECKOUT</div>
+                        <div class="funnel-percentage">0.012%</div>
+                    </div>
+                    <div class="funnel-step step-3">
+                        <div class="funnel-number">1</div>
+                        <div class="funnel-label">VENDAS</div>
+                        <div class="funnel-percentage">0.012%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leads by Day Chart -->
+        <section class="leads-day-section">
+            <div class="chart-container clickable-card" data-metric="leads-dia-semana">
+                <h3>LEADS POR DIA DA SEMANA</h3>
+                <canvas id="leadsDayChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Leads by Hour Chart -->
+        <section class="leads-hour-section">
+            <div class="chart-container clickable-card" data-metric="leads-hora">
+                <h3>LEADS POR HORA</h3>
+                <canvas id="leadsHourChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Meta vs Google Comparison -->
+        <section class="comparison-section">
+            <div class="chart-container clickable-card" data-metric="meta-vs-google">
+                <h3>META VS GOOGLE</h3>
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Geographic Analysis -->
+        <section class="geographic-section">
+            <div class="geographic-container clickable-card" data-metric="analise-geografica">
+                <h3><i class="fas fa-map-marker-alt"></i> ANÁLISE GEOGRÁFICA POR ESTADO</h3>
+                <div class="geographic-metrics">
+                    <div class="geo-metric">
+                        <div class="geo-value">8,247</div>
+                        <div class="geo-label">Total Leads</div>
+                    </div>
+                    <div class="geo-metric">
+                        <div class="geo-value">1</div>
+                        <div class="geo-label">Compradores</div>
+                    </div>
+                    <div class="geo-metric">
+                        <div class="geo-value">59</div>
+                        <div class="geo-label">Estados</div>
+                    </div>
+                    <div class="geo-metric">
+                        <div class="geo-value">São Paulo</div>
+                        <div class="geo-label">Estado Líder</div>
+                    </div>
+                    <div class="geo-metric">
+                        <div class="geo-value">0.012%</div>
+                        <div class="geo-label">Conversão Média</div>
+                    </div>
+                </div>
+                <div class="states-table">
+                    <div class="table-header">
+                        <span>Ranking</span>
+                        <span>Estado</span>
+                        <span>Leads</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="ranking">1</span>
+                        <span class="state">São Paulo</span>
+                        <span class="leads">1,878</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="ranking">2</span>
+                        <span class="state">Rio de Janeiro</span>
+                        <span class="leads">1,527</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="ranking">3</span>
+                        <span class="state">Minas Gerais</span>
+                        <span class="leads">868</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="ranking">4</span>
+                        <span class="state">Bahia</span>
+                        <span class="leads">666</span>
+                    </div>
+                    <div class="table-row">
+                        <span class="ranking">5</span>
+                        <span class="state">Pernambuco</span>
+                        <span class="leads">467</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Sources and Ads -->
+        <section class="top-sources-section">
+            <div class="sources-grid">
+                <div class="sources-container clickable-card" data-metric="top-fontes">
+                    <h3><i class="fas fa-trophy"></i> TOP FONTES</h3>
+                    <div class="sources-list">
+                        <div class="source-item">
+                            <div class="source-rank">1</div>
+                            <div class="source-name">Google</div>
+                            <div class="source-leads">4,620 leads</div>
+                        </div>
+                        <div class="source-item">
+                            <div class="source-rank">2</div>
+                            <div class="source-name">Instagram</div>
+                            <div class="source-leads">1,990 leads</div>
+                        </div>
+                        <div class="source-item">
+                            <div class="source-rank">3</div>
+                            <div class="source-name">Facebook</div>
+                            <div class="source-leads">1,450 leads</div>
+                        </div>
+                        <div class="source-item">
+                            <div class="source-rank">4</div>
+                            <div class="source-name">Meta</div>
+                            <div class="source-leads">82 leads</div>
+                        </div>
+                        <div class="source-item">
+                            <div class="source-rank">5</div>
+                            <div class="source-name">Formulário</div>
+                            <div class="source-leads">105 leads</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ads-container clickable-card" data-metric="top-anuncios">
+                    <h3><i class="fas fa-ad"></i> TOP ANÚNCIOS</h3>
+                    <div class="ads-list">
+                        <div class="ad-item">
+                            <div class="ad-rank">1</div>
+                            <div class="ad-name">AD94-</div>
+                            <div class="ad-leads">3,500 leads</div>
+                        </div>
+                        <div class="ad-item">
+                            <div class="ad-rank">2</div>
+                            <div class="ad-name">766064...</div>
+                            <div class="ad-leads">1,500 leads</div>
+                        </div>
+                        <div class="ad-item">
+                            <div class="ad-rank">3</div>
+                            <div class="ad-name">767401...</div>
+                            <div class="ad-leads">1,400 leads</div>
+                        </div>
+                        <div class="ad-item">
+                            <div class="ad-rank">4</div>
+                            <div class="ad-name">AD63+-...</div>
+                            <div class="ad-leads">1,200 leads</div>
+                        </div>
+                        <div class="ad-item">
+                            <div class="ad-rank">5</div>
+                            <div class="ad-name">767401...</div>
+                            <div class="ad-leads">647 leads</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patrimonial Intelligence Center -->
+        <section class="patrimonial-section">
+            <div class="patrimonial-container clickable-card" data-metric="inteligencia-patrimonial">
+                <h3><i class="fas fa-money-bill-wave"></i> CENTRO DE INTELIGÊNCIA PATRIMONIAL</h3>
+                <div class="patrimonial-metrics">
+                    <div class="patrimonial-card">
+                        <div class="patrimonial-value">8,247</div>
+                        <div class="patrimonial-label">Total com Dados</div>
+                        <div class="patrimonial-percentage">100.0%</div>
+                    </div>
+                    <div class="patrimonial-card">
+                        <div class="patrimonial-value">8,227</div>
+                        <div class="patrimonial-label">Alto Patrimônio</div>
+                        <div class="patrimonial-percentage">99.8%</div>
+                    </div>
+                    <div class="patrimonial-card">
+                        <div class="patrimonial-value">1,979</div>
+                        <div class="patrimonial-label">Urgência Alta</div>
+                        <div class="patrimonial-percentage">24.0%</div>
+                    </div>
+                    <div class="patrimonial-card">
+                        <div class="patrimonial-value">6,655</div>
+                        <div class="patrimonial-label">Interessados</div>
+                        <div class="patrimonial-percentage">80.7%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priority Leads List -->
+        <section class="priority-leads-section">
+            <div class="priority-container clickable-card" data-metric="leads-prioritarios">
+                <h3><i class="fas fa-exclamation-triangle"></i> LISTA DE LEADS PRIORITÁRIOS</h3>
+                <div class="leads-list">
+                    <div class="lead-item">
+                        <div class="lead-priority urgent">URGENTE</div>
+                        <div class="lead-info">
+                            <div class="lead-name">NILZETE AI RODRIGUE</div>
+                            <div class="lead-username">nilzeteaparec</div>
+                            <div class="lead-phone">55499918731</div>
+                        </div>
+                    </div>
+                    <div class="lead-item">
+                        <div class="lead-priority urgent">URGENTE</div>
+                        <div class="lead-info">
+                            <div class="lead-name">Cristiane</div>
+                            <div class="lead-username">cristianeviola</div>
+                            <div class="lead-phone">551199476941</div>
+                        </div>
+                    </div>
+                    <div class="lead-item">
+                        <div class="lead-priority urgent">URGENTE</div>
+                        <div class="lead-info">
+                            <div class="lead-name">José Maurí</div>
+                            <div class="lead-username">mfranco.mj4</div>
+                            <div class="lead-phone">55219872459</div>
+                        </div>
+                    </div>
+                    <div class="lead-item">
+                        <div class="lead-priority urgent">URGENTE</div>
+                        <div class="lead-info">
+                            <div class="lead-name">Roseane M</div>
+                            <div class="lead-username">roseane.o.me</div>
+                            <div class="lead-phone">558598773118</div>
+                        </div>
+                    </div>
+                    <div class="lead-item">
+                        <div class="lead-priority urgent">URGENTE</div>
+                        <div class="lead-info">
+                            <div class="lead-name">Aires Gonç</div>
+                            <div class="lead-username">aires.craveiro</div>
+                            <div class="lead-phone">55119722003</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Groups Status -->
+        <section class="whatsapp-section">
+            <div class="whatsapp-container clickable-card" data-metric="status-whatsapp">
+                <h3>STATUS DOS GRUPOS WHATSAPP</h3>
+                <div class="groups-list">
+                    <div class="group-item">
+                        <div class="group-title">#1 Jornada da Proteção Patrimonial</div>
+                        <div class="group-metrics">
+                            <div class="group-metric">
+                                <div class="metric-number">226</div>
+                                <div class="metric-label">Membros</div>
+                            </div>
+                            <div class="group-metric">
+                                <div class="metric-number">7</div>
+                                <div class="metric-label">Admins</div>
+                            </div>
+                            <div class="group-metric">
+                                <div class="status-indicator active"></div>
+                                <div class="metric-label">Status</div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="group-item">
+                        <div class="group-title">#2 Jornada da Proteção Patrimonial</div>
+                        <div class="group-metrics">
+                            <div class="group-metric">
+                                <div class="metric-number">214</div>
+                                <div class="metric-label">Membros</div>
+                            </div>
+                            <div class="group-metric">
+                                <div class="metric-number">7</div>
+                                <div class="metric-label">Admins</div>
+                            </div>
+                            <div class="group-metric">
+                                <div class="status-indicator active"></div>
+                                <div class="metric-label">Status</div>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Last Update Info -->
+        <section class="update-section">
+            <div class="update-container">
+                <div class="update-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Última atualização: 10/09/2025, 17:30:15 | Dashboard Ultimate V5.8 para XRM</span>
+                </div>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-gavel"></i>
+                        <span>Advocacia</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Atende Direito</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Funil Otimizado</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-circle"></i>
+                        <span>+ META vs Google</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-circle"></i>
+                        <span>Sistema de Validação Avançada</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Centro de Inteligência Patrimonial</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-fire"></i>
+                        <span>Score de Leads</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Análise ICP</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-circle"></i>
+                        <span>Heatmaps</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Leads Quentes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalhes -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script-interactive.js?v=202509102130"></script>
+</body>
+</html>

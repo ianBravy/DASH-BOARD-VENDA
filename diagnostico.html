@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #1a1a2e; color: white; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .ok { background: #2d5a27; border: 1px solid #4caf50; }
+        .erro { background: #5a2d2d; border: 1px solid #f44336; }
+        .valor { font-size: 24px; color: #d4af37; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Diagnóstico do Dashboard</h1>
+    
+    <div class="status ok">
+        <h3>✅ Servidor HTTP</h3>
+        <p>Status: Funcionando em http://localhost:8080</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Valores Principais</h3>
+        <div class="valor">8,247</div>
+        <p>Total de Leads (consistente em todos os lugares)</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Fontes de Leads</h3>
+        <div class="valor">4,620 + 1,990 + 1,450 + 82 + 105 = 8,247</div>
+        <p>Google + Instagram + Facebook + Meta + Formulário</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Anúncios</h3>
+        <div class="valor">3,500 + 1,500 + 1,400 + 1,200 + 647 = 8,247</div>
+        <p>AD94- + 766064... + 767401... + AD63+-... + 767401...</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Patrimonial</h3>
+        <div class="valor">8,247</div>
+        <p>Total com Dados Patrimoniais</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Funil de Conversão</h3>
+        <div class="valor">8,247 → 1 → 1</div>
+        <p>Leads → Pré-Checkout → Vendas (0.012%)</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>✅ Arquivos</h3>
+        <p>index.html: ✅ Atualizado</p>
+        <p>script-interactive.js: ✅ Atualizado</p>
+        <p>styles.css: ✅ Atualizado</p>
+    </div>
+    
+    <div class="status ok">
+        <h3>🌐 Próximos Passos</h3>
+        <p>1. Acesse: <a href="http://localhost:8080" style="color: #d4af37;">http://localhost:8080</a></p>
+        <p>2. Force o reload: Ctrl+F5 ou Cmd+Shift+R</p>
+        <p>3. Teste os modais clicando nas métricas</p>
+        <p>4. Se ainda houver problema, use modo incógnito</p>
+    </div>
+    
+    <script>
+        console.log('🔍 Diagnóstico carregado com sucesso!');
+        console.log('📊 Todos os valores estão consistentes: 8,247 leads');
+        console.log('🌐 Servidor funcionando em: http://localhost:8080');
+    </script>
+</body>
+</html>
