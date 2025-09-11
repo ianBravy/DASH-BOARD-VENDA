@@ -1,12 +1,13 @@
 {
-  "name": "dashboard-vendas-xrm",
-  "version": "1.0.0",
-  "description": "Dashboard de Vendas - BRVY®",
+  "name": "dashboard-vendas-bravy",
+  "version": "2.0.0",
+  "description": "Dashboard de Vendas Interativo - BRVY®",
   "main": "index.html",
   "scripts": {
     "dev": "python3 -m http.server 8080",
-    "build": "echo 'Build completed'",
-    "start": "python3 -m http.server 8080"
+    "build": "echo 'Build completed - BRVY® Dashboard'",
+    "start": "python3 -m http.server 8080",
+    "deploy": "vercel --prod"
   },
   "keywords": [
     "dashboard",

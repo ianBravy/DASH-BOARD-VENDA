@@ -465,7 +465,7 @@ function updateRandomMetrics() {
             minute: '2-digit',
             second: '2-digit'
         });
-        updateInfo.textContent = `Última atualização: ${timestamp} | Dashboard Ultimate V5.8 para XRM`;
+        updateInfo.textContent = `Última atualização: ${timestamp} | Dashboard Ultimate V5.8 para BRVY®`;
     }
 }
 
