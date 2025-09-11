@@ -1,0 +1,25 @@
+{
+  "name": "dashboard-vendas-xrm",
+  "version": "1.0.0",
+  "description": "Dashboard de Vendas - BRVY®",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "build": "echo 'Build completed'",
+    "start": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "dashboard",
+    "vendas",
+    "advocacia",
+    "analytics",
+    "leads"
+  ],
+  "author": "BRVY®",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
