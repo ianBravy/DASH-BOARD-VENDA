@@ -14,7 +14,7 @@ body {
     position: relative;
 }
 
-/* Fundo com elementos gráficos animados */
+/* Fundo simples e estável */
 body::before {
     content: '';
     position: fixed;
@@ -22,164 +22,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #000000 0%, #111111 100%);
+    background: #000000;
     z-index: -1;
-    animation: backgroundShift 20s ease-in-out infinite;
-}
-
-@keyframes backgroundShift {
-    0%, 100% { 
-        background: linear-gradient(135deg, #000000 0%, #111111 100%);
-    }
-    50% { 
-        background: linear-gradient(135deg, #111111 0%, #000000 100%);
-    }
 }
 
 /* Ativar fundo com padrões */
 
-/* Elementos geométricos decorativos animados */
-body::after {
-    content: '';
-    position: fixed;
-    top: 10%;
-    right: 5%;
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(45deg, #ffffff, #cccccc);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    opacity: 0.1;
-    z-index: -1;
-    animation: float 6s ease-in-out infinite;
-}
+/* Elementos decorativos removidos para estabilidade */
 
-@keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-}
-
-/* Elementos gráficos adicionais */
-.dashboard::before {
-    content: '';
-    position: fixed;
-    top: 30%;
-    left: 10%;
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(45deg, #ffffff, #666666);
-    clip-path: circle(50%);
-    opacity: 0.05;
-    z-index: -1;
-    animation: pulse 8s ease-in-out infinite;
-}
-
-.dashboard::after {
-    content: '';
-    position: fixed;
-    bottom: 20%;
-    right: 15%;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(45deg, #ffffff, #999999);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    opacity: 0.08;
-    z-index: -1;
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.05; }
-    50% { transform: scale(1.2); opacity: 0.1; }
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Elementos gráficos flutuantes adicionais */
-.metrics-section::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 5%;
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(45deg, #ffffff, #666666);
-    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-    opacity: 0.06;
-    z-index: -1;
-    animation: drift 12s ease-in-out infinite;
-}
-
-.charts-section::before {
-    content: '';
-    position: absolute;
-    top: 10%;
-    right: 8%;
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(45deg, #ffffff, #999999);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    opacity: 0.04;
-    z-index: -1;
-    animation: sway 15s ease-in-out infinite;
-}
-
-@keyframes drift {
-    0%, 100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
-    25% { transform: translateX(20px) translateY(-10px) rotate(90deg); }
-    50% { transform: translateX(-10px) translateY(20px) rotate(180deg); }
-    75% { transform: translateX(-20px) translateY(-5px) rotate(270deg); }
-}
-
-@keyframes sway {
-    0%, 100% { transform: translateX(0px) translateY(0px) scale(1); }
-    33% { transform: translateX(15px) translateY(10px) scale(1.1); }
-    66% { transform: translateX(-10px) translateY(15px) scale(0.9); }
-}
-
-/* Elementos gráficos adicionais para BRVY® */
-.funnel-section::before {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: 20%;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #ffffff, #888888);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    opacity: 0.03;
-    z-index: -1;
-    animation: diamondFloat 18s ease-in-out infinite;
-}
-
-.patrimonial-section::after {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    left: 15%;
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(45deg, #ffffff, #aaaaaa);
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    opacity: 0.04;
-    z-index: -1;
-    animation: hexagonSpin 22s linear infinite;
-}
-
-@keyframes diamondFloat {
-    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
-    25% { transform: translateY(-15px) rotate(90deg) scale(1.1); }
-    50% { transform: translateY(-30px) rotate(180deg) scale(0.9); }
-    75% { transform: translateY(-15px) rotate(270deg) scale(1.05); }
-}
-
-@keyframes hexagonSpin {
-    0% { transform: rotate(0deg) scale(1); }
-    50% { transform: rotate(180deg) scale(1.2); }
-    100% { transform: rotate(360deg) scale(1); }
-}
+/* Todos os elementos decorativos removidos para estabilidade */
 
 /* Header */
 .header {
@@ -214,12 +65,8 @@ body::after {
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.6),
-        0 0 30px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     position: relative;
-    animation: float 6s ease-in-out infinite;
 }
 
 .logo::before {
