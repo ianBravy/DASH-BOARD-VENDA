@@ -14,7 +14,7 @@ body {
     position: relative;
 }
 
-/* Fundo com padrões sutis */
+/* Fundo com padrões sutis e elementos interativos */
 body::before {
     content: '';
     position: fixed;
@@ -26,13 +26,95 @@ body::before {
         radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%);
     z-index: -1;
+    animation: backgroundShift 20s ease-in-out infinite;
 }
 
-/* Ativar fundo com padrões */
+/* Elementos decorativos flutuantes */
+body::after {
+    content: '';
+    position: fixed;
+    top: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.05));
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
 
-/* Elementos decorativos removidos para estabilidade */
+.dashboard::before {
+    content: '';
+    position: fixed;
+    bottom: 15%;
+    left: 8%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(200, 200, 200, 0.03));
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
+    animation: drift 8s ease-in-out infinite;
+}
 
-/* Todos os elementos decorativos removidos para estabilidade */
+.dashboard::after {
+    content: '';
+    position: fixed;
+    top: 30%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, rgba(128, 128, 128, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 20px;
+    z-index: -1;
+    animation: sway 10s ease-in-out infinite;
+}
+
+/* Animações para elementos interativos */
+@keyframes backgroundShift {
+    0%, 100% {
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.05) 0%, transparent 50%);
+    }
+    50% {
+        background: 
+            radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%),
+            radial-gradient(circle at 20% 80%, rgba(128, 128, 128, 0.08) 0%, transparent 50%);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes drift {
+    0%, 100% {
+        transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateX(20px) translateY(-15px) rotate(120deg);
+    }
+    66% {
+        transform: translateX(-10px) translateY(10px) rotate(240deg);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateX(15px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-15px) rotate(-5deg);
+    }
+}
 
 /* Header */
 .header {
@@ -56,19 +138,25 @@ body::before {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-    border-radius: 8px;
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
-    color: #000000;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
     position: relative;
-    border: 2px solid #666666;
+    animation: float 3s ease-in-out infinite;
+    padding: 8px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .logo::before {
@@ -80,7 +168,10 @@ body::before {
     vertical-align: super;
     margin-left: 2px;
     font-weight: normal;
-    color: #666666;
+    color: #cccccc;
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.6),
+        0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .company-info h1 {
