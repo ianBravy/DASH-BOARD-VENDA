@@ -148,6 +148,48 @@ body::after {
     66% { transform: translateX(-10px) translateY(15px) scale(0.9); }
 }
 
+/* Elementos gráficos adicionais para BRVY® */
+.funnel-section::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ffffff, #888888);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    opacity: 0.03;
+    z-index: -1;
+    animation: diamondFloat 18s ease-in-out infinite;
+}
+
+.patrimonial-section::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(45deg, #ffffff, #aaaaaa);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    opacity: 0.04;
+    z-index: -1;
+    animation: hexagonSpin 22s linear infinite;
+}
+
+@keyframes diamondFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    25% { transform: translateY(-15px) rotate(90deg) scale(1.1); }
+    50% { transform: translateY(-30px) rotate(180deg) scale(0.9); }
+    75% { transform: translateY(-15px) rotate(270deg) scale(1.05); }
+}
+
+@keyframes hexagonSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
 /* Header */
 .header {
     background: rgba(0, 0, 0, 0.9);

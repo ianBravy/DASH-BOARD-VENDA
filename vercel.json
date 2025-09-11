@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "dashboard-vendas-BRVY®",
+  "name": "dashboard-vendas-bravy",
   "builds": [
     {
       "src": "index.html",
@@ -32,5 +32,13 @@
         }
       ]
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }

@@ -1,4 +1,4 @@
-// Dashboard interativo com modais detalhados
+// Dashboard interativo BRVY® - Sistema de análise de vendas com identidade visual moderna
 const dashboardData = {
     evolutionData: {
         labels: ['04/09', '05/09', '06/09', '07/09', '08/09', '09/09', '10/09', '11/09', '12/09'],
@@ -1327,16 +1327,30 @@ function createModalCharts(metric) {
     }
 }
 
-// Notificação
+// Notificação BRVY®
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.textContent = message;
     notification.style.cssText = `
         position: fixed; top: 20px; right: 20px; z-index: 1000;
-        background: #d4af37; color: #1a1a2e; padding: 10px 15px;
+        background: #ffffff; color: #000000; padding: 10px 15px;
         border-radius: 5px; font-weight: 600;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.5);
     `;
     
     document.body.appendChild(notification);
     setTimeout(() => notification.remove(), 2000);
 }
+
+// Mensagem de boas-vindas do dashboard BRVY®
+function showDashboardWelcome() {
+    const welcomeMessage = "Bem-vindo ao Dashboard BRVY® - Sistema de análise de vendas interativo";
+    console.log(`🚀 ${welcomeMessage}`);
+    showNotification(welcomeMessage);
+}
+
+// Inicializar dashboard BRVY®
+document.addEventListener('DOMContentLoaded', function() {
+    showDashboardWelcome();
+});
