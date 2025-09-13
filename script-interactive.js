@@ -1095,6 +1095,81 @@ const metricDetails = {
                 <div class="label">Média de mensagens nos grupos</div>
             </div>
         `
+    },
+    
+    'custo-lead': {
+        title: 'Custo por Lead - Análise Financeira',
+        content: `
+            <div class="metric-detail">
+                <h4>Custo Médio Atual</h4>
+                <div class="value">R$ 12,50</div>
+                <div class="label">Custo médio para aquisição de cada lead válido</div>
+            </div>
+            
+            <h3>Análise por Fonte</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Fonte</th>
+                        <th>Custo por Lead</th>
+                        <th>ROI</th>
+                        <th>Leads Gerados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Facebook</td><td>R$ 8,90</td><td>12.4x</td><td>2,886</td></tr>
+                    <tr><td>Instagram</td><td>R$ 15,20</td><td>7.2x</td><td>2,062</td></tr>
+                    <tr><td>Google</td><td>R$ 22,50</td><td>4.8x</td><td>1,649</td></tr>
+                    <tr><td>Meta</td><td>R$ 11,80</td><td>9.6x</td><td>1,237</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Evolução do Custo (Últimos 30 dias)</h3>
+            <div style="max-height: 300px; overflow-y: auto; margin-top: 15px;">
+                <table class="data-table">
+                    <thead style="position: sticky; top: 0; background: #1a1a1a;">
+                        <tr>
+                            <th>Data</th>
+                            <th>Custo Total</th>
+                            <th>Leads</th>
+                            <th>Custo/Lead</th>
+                            <th>Variação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11/09/2025</td><td>R$ 103.125</td><td>8.247</td><td>R$ 12,50</td><td style="color: #06d6a0;">-5.4%</td></tr>
+                        <tr><td>10/09/2025</td><td>R$ 109.040</td><td>8.120</td><td>R$ 13,43</td><td style="color: #ff6b6b;">+2.1%</td></tr>
+                        <tr><td>09/09/2025</td><td>R$ 106.760</td><td>7.980</td><td>R$ 13,38</td><td style="color: #ff6b6b;">+1.8%</td></tr>
+                        <tr><td>08/09/2025</td><td>R$ 104.880</td><td>7.850</td><td>R$ 13,36</td><td style="color: #06d6a0;">-0.3%</td></tr>
+                        <tr><td>07/09/2025</td><td>R$ 105.195</td><td>7.820</td><td>R$ 13,45</td><td style="color: #06d6a0;">-2.1%</td></tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center; color: #888; padding: 10px; font-size: 12px;">
+                    Mostrando últimos 5 dias de 30 registros
+                </div>
+            </div>
+            
+            <h3>Métricas de Performance</h3>
+            <div class="metric-detail">
+                <h4>Meta Mensal</h4>
+                <div class="value">R$ 10,00</div>
+                <div class="label">Custo por lead desejado</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>ROI Médio</h4>
+                <div class="value">8.2x</div>
+                <div class="label">Retorno sobre investimento</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>Economia vs Meta</h4>
+                <div class="value">R$ 2,50</div>
+                <div class="label">Diferença do custo atual para meta</div>
+            </div>
+            
+            <canvas id="modal-custo-chart" width="400" height="200"></canvas>
+        `
     }
 };
 
@@ -1108,7 +1183,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Carregar métricas principais
 function loadMainMetrics() {
     const metrics = [
-        { selector: '.metric-value', values: ['8,247', '92.7%', '68.5%'] },
+        { selector: '.metric-value', values: ['8,247', '92.7%', '68.5%', 'R$ 12,50'] },
         { selector: '.conversion-value', values: ['1', '1', '0.012%'] }
     ];
     
@@ -1301,6 +1376,26 @@ function createModalCharts(metric) {
             new Chart(ctx, {
                 type: 'line',
                 data: dashboardData.evolutionData,
+                options: chartConfigs.line
+            });
+        }
+    } else if (metric === 'custo-lead') {
+        const ctx = document.getElementById('modal-custo-chart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['07/09', '08/09', '09/09', '10/09', '11/09'],
+                    datasets: [{
+                        label: 'Custo por Lead (R$)',
+                        data: [13.45, 13.36, 13.38, 13.43, 12.50],
+                        borderColor: '#ffffff',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
                 options: chartConfigs.line
             });
         }
