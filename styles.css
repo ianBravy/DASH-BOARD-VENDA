@@ -1205,35 +1205,86 @@ body::after {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .search-container {
-        grid-template-columns: 1fr;
-        gap: 12px;
+
+/* Tablet Landscape (1024px) */
+@media (max-width: 1024px) {
+    .dashboard {
+        max-width: 100%;
+        padding: 12px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .utm-charts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .conversion-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .charts-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 10px;
+    }
+    
+    .search-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .utm-charts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .sources-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
     .geographic-metrics {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     
     .patrimonial-metrics {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .final-stats-section .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .features-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
     
     .group-metrics {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
     
     .table-header, .table-row {
@@ -1241,45 +1292,263 @@ body::after {
         gap: 10px;
         padding: 10px 15px;
     }
+    
+    .metric-card {
+        padding: 15px;
+    }
+    
+    .metric-value {
+        font-size: 28px;
+    }
+    
+    .utm-chart-container {
+        height: 90px;
+    }
 }
 
+/* Mobile Landscape (640px) */
+@media (max-width: 640px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .utm-charts-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .conversion-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .geographic-metrics {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .patrimonial-metrics {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .final-stats-section .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .features-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+/* Mobile Portrait (480px) */
 @media (max-width: 480px) {
     .dashboard {
-        padding: 10px;
+        padding: 8px;
+    }
+    
+    .header {
+        padding: 10px 0;
     }
     
     .header-content {
-        padding: 0 10px;
+        padding: 0 8px;
     }
     
     .logo-section {
         flex-direction: column;
         text-align: center;
-        gap: 12px;
+        gap: 10px;
+    }
+    
+    .logo {
+        font-size: 28px;
     }
     
     .company-info h1 {
-        font-size: 24px;
+        font-size: 16px;
+    }
+    
+    .company-info p {
+        font-size: 12px;
+    }
+    
+    .search-container {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .metric-card {
+        padding: 12px;
     }
     
     .metric-value {
-        font-size: 36px;
+        font-size: 24px;
     }
     
-    .conversion-value {
-        font-size: 28px;
+    .metric-label {
+        font-size: 12px;
     }
     
-    .patrimonial-value {
-        font-size: 28px;
+    .utm-chart-item {
+        padding: 10px;
     }
     
-    .geographic-metrics {
-        grid-template-columns: 1fr;
+    .utm-chart-container {
+        height: 80px;
     }
     
-    .patrimonial-metrics {
-        grid-template-columns: 1fr;
+    .utm-chart-item h4 {
+        font-size: 11px;
+    }
+    
+    .chart-container {
+        padding: 15px;
+    }
+    
+    .chart-container h3 {
+        font-size: 14px;
+    }
+    
+    .table-header, .table-row {
+        grid-template-columns: 50px 1fr 70px;
+        gap: 8px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .leads-list {
+        gap: 10px;
+    }
+    
+    .lead-item {
+        padding: 15px;
+    }
+    
+    .lead-name {
+        font-size: 14px;
+    }
+    
+    .lead-username, .lead-phone {
+        font-size: 12px;
+    }
+    
+    .groups-list {
+        gap: 15px;
+    }
+    
+    .group-item {
+        padding: 15px;
+    }
+    
+    .group-title {
+        font-size: 14px;
+    }
+    
+    .update-container {
+        padding: 15px;
+    }
+    
+    .update-info {
+        font-size: 12px;
+    }
+    
+    .feature-item {
+        padding: 8px;
+    }
+    
+    .feature-item span {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Extra Small (360px) */
+@media (max-width: 360px) {
+    .dashboard {
+        padding: 5px;
+    }
+    
+    .header-content {
+        padding: 0 5px;
+    }
+    
+    .search-container {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .metric-card {
+        padding: 10px;
+    }
+    
+    .metric-value {
+        font-size: 20px;
+    }
+    
+    .metric-label {
+        font-size: 11px;
+    }
+    
+    .utm-chart-container {
+        height: 70px;
+    }
+    
+    .utm-chart-item h4 {
+        font-size: 10px;
+    }
+    
+    .chart-container {
+        padding: 12px;
+    }
+    
+    .chart-container h3 {
+        font-size: 13px;
+    }
+    
+    .table-header, .table-row {
+        grid-template-columns: 40px 1fr 60px;
+        gap: 6px;
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .lead-item {
+        padding: 12px;
+    }
+    
+    .lead-name {
+        font-size: 13px;
+    }
+    
+    .lead-username, .lead-phone {
+        font-size: 11px;
+    }
+    
+    .group-item {
+        padding: 12px;
+    }
+    
+    .group-title {
+        font-size: 13px;
+    }
+    
+    .update-container {
+        padding: 12px;
+    }
+    
+    .update-info {
+        font-size: 11px;
+    }
+    
+    .feature-item {
+        padding: 6px;
+    }
+    
+    .feature-item span {
+        font-size: 11px;
     }
 }
 
