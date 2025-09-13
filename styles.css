@@ -119,7 +119,7 @@ body::after {
 /* Header */
 .header {
     background: #1a1a1a;
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 10;
@@ -128,13 +128,13 @@ body::after {
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
 }
 
 .logo {
@@ -192,23 +192,23 @@ body::after {
 .dashboard {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    padding-bottom: 50px;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
 /* Search Section */
 .search-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .search-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
-    gap: 20px;
+    gap: 12px;
     align-items: end;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -217,7 +217,7 @@ body::after {
 .search-item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .search-item i {
@@ -277,20 +277,20 @@ body::after {
 
 /* Metrics Section */
 .metrics-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 
 .metric-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 30px;
+    padding: 18px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -317,14 +317,14 @@ body::after {
 .metric-icon {
     font-size: 32px;
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .metric-value {
     font-size: 48px;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -338,20 +338,20 @@ body::after {
 
 /* Conversion Section */
 .conversion-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .conversion-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 12px;
 }
 
 .conversion-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -365,14 +365,14 @@ body::after {
 .conversion-icon {
     font-size: 28px;
     color: #ffffff;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .conversion-value {
     font-size: 36px;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .conversion-label {
@@ -385,20 +385,20 @@ body::after {
 
 /* Charts Section */
 .charts-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .charts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 12px;
 }
 
 .chart-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     height: 400px;
@@ -409,14 +409,14 @@ body::after {
 .chart-container canvas {
     max-height: 300px !important;
     width: 100% !important;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .chart-container h3 {
     color: #ffffff;
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -425,14 +425,14 @@ body::after {
 
 /* Funnel Section */
 .funnel-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .funnel-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -440,7 +440,7 @@ body::after {
 .funnel-container h3 {
     color: #ffffff;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -456,7 +456,7 @@ body::after {
 .funnel-step {
     width: 100%;
     max-width: 400px;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     color: #ffffff;
@@ -503,29 +503,29 @@ body::after {
 
 /* Leads Day Section */
 .leads-day-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* Leads Hour Section */
 .leads-hour-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* Comparison Section */
 .comparison-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* Geographic Section */
 .geographic-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .geographic-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -533,7 +533,7 @@ body::after {
 .geographic-container h3 {
     color: #ffffff;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -546,8 +546,8 @@ body::after {
 .geographic-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    margin-bottom: 25px;
+    gap: 12px;
+    margin-bottom: 5px;
 }
 
 .geo-metric {
@@ -581,7 +581,7 @@ body::after {
 .table-header {
     display: grid;
     grid-template-columns: 80px 1fr 100px;
-    gap: 20px;
+    gap: 12px;
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.12);
     font-weight: 600;
@@ -593,7 +593,7 @@ body::after {
 .table-row {
     display: grid;
     grid-template-columns: 80px 1fr 100px;
-    gap: 20px;
+    gap: 12px;
     padding: 15px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     transition: background 0.3s ease;
@@ -619,20 +619,20 @@ body::after {
 
 /* Top Sources Section */
 .top-sources-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .sources-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 12px;
 }
 
 .sources-container, .ads-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -651,13 +651,13 @@ body::after {
 .sources-list, .ads-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .source-item, .ad-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     padding: 15px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
@@ -696,14 +696,14 @@ body::after {
 
 /* Patrimonial Section */
 .patrimonial-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .patrimonial-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -711,7 +711,7 @@ body::after {
 .patrimonial-container h3 {
     color: #ffffff;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -724,13 +724,13 @@ body::after {
 .patrimonial-metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 12px;
 }
 
 .patrimonial-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.08) 100%);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all 0.3s ease;
@@ -757,7 +757,7 @@ body::after {
     font-size: 36px;
     font-weight: bold;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .patrimonial-label {
@@ -765,7 +765,7 @@ body::after {
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 .patrimonial-percentage {
@@ -776,14 +776,14 @@ body::after {
 
 /* Priority Leads Section */
 .priority-leads-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .priority-container {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -791,7 +791,7 @@ body::after {
 .priority-container h3 {
     color: #ffffff;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -804,14 +804,14 @@ body::after {
 .leads-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .lead-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 12px;
+    padding: 15px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -861,19 +861,19 @@ body::after {
 
 /* WhatsApp Section */
 .whatsapp-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 /* UTM Section */
 .utm-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .utm-container {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
-    padding: 25px;
+    padding: 15px;
     transition: all 0.3s ease;
 }
 
@@ -901,16 +901,16 @@ body::after {
 
 .utm-charts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
 }
 
 .utm-chart-item {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -925,7 +925,7 @@ body::after {
     color: #ffffff;
     font-size: 12px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     text-transform: lowercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
@@ -933,8 +933,8 @@ body::after {
 }
 
 .utm-chart-container {
-    height: 120px;
-    margin-bottom: 10px;
+    height: 100px;
+    margin-bottom: 6px;
 }
 
 .utm-chart-summary {
@@ -961,7 +961,7 @@ body::after {
 .utm-summary {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 12px;
 }
 
 .utm-item {
@@ -987,13 +987,13 @@ body::after {
 }
 
 .utm-recommendations {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .recommendation-item {
     background: rgba(255, 255, 255, 0.05);
     padding: 12px 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 8px;
     border-left: 4px solid #ffffff;
     color: #ffffff;
@@ -1008,7 +1008,7 @@ body::after {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -1016,7 +1016,7 @@ body::after {
 .whatsapp-container h3 {
     color: #ffffff;
     font-size: 18px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1025,13 +1025,13 @@ body::after {
 .groups-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 12px;
 }
 
 .group-item {
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all 0.3s ease;
 }
@@ -1044,14 +1044,14 @@ body::after {
     color: #ffffff;
     font-weight: bold;
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .group-metrics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 15px;
+    gap: 12px;
+    margin-bottom: 5px;
 }
 
 .group-metric {
@@ -1101,21 +1101,21 @@ body::after {
 
 /* Final Statistics Section */
 .final-stats-section {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
 .stat-card {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -1130,14 +1130,14 @@ body::after {
 .stat-icon {
     font-size: 24px;
     color: #ffffff;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .stat-value {
     font-size: 28px;
     font-weight: 700;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -1151,7 +1151,7 @@ body::after {
 
 /* Update Section */
 .update-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-top: 25px;
 }
 
@@ -1159,7 +1159,7 @@ body::after {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
@@ -1176,7 +1176,7 @@ body::after {
 .features-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    gap: 12px;
 }
 
 .feature-item {
@@ -1208,7 +1208,7 @@ body::after {
 @media (max-width: 768px) {
     .search-container {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
     }
     
     .charts-grid {
@@ -1233,7 +1233,7 @@ body::after {
     
     .group-metrics {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 12px;
     }
     
     .table-header, .table-row {
@@ -1255,7 +1255,7 @@ body::after {
     .logo-section {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 12px;
     }
     
     .company-info h1 {
@@ -1301,7 +1301,7 @@ body::after {
 .modal-content {
     background: linear-gradient(135deg, #111111 0%, #000000 100%);
     margin: 5% auto;
-    padding: 30px;
+    padding: 18px;
     border-radius: 15px;
     width: 80%;
     max-width: 800px;
@@ -1357,12 +1357,12 @@ body::after {
 .modal p {
     color: #cccccc;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .modal .metric-detail {
     background: rgba(255, 255, 255, 0.08);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     margin: 15px 0;
     border-left: 4px solid #ffffff;
@@ -1370,7 +1370,7 @@ body::after {
 
 .modal .metric-detail h4 {
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 16px;
 }
 

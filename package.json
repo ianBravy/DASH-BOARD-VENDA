@@ -12,12 +12,9 @@
   "keywords": [
     "dashboard",
     "vendas",
-    "bravy",
+    "advocacia",
     "analytics",
-    "leads",
-    "interactive",
-    "monochrome",
-    "animated"
+    "leads"
   ],
   "author": "BRVY®",
   "license": "MIT",
@@ -25,10 +22,5 @@
     "node": ">=14.0.0"
   },
   "dependencies": {},
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ianBravy/DASH-BOARD-VENDA.git"
-  },
-  "homepage": "https://dashboard-bravy.vercel.app"
+  "devDependencies": {}
 }
