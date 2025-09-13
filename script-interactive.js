@@ -1170,6 +1170,99 @@ const metricDetails = {
             
             <canvas id="modal-custo-chart" width="400" height="200"></canvas>
         `
+    },
+    
+    'resposta-pesquisa': {
+        title: 'Resposta à Pesquisa - Análise de Engajamento',
+        content: `
+            <div class="metric-detail">
+                <h4>Taxa de Resposta</h4>
+                <div class="value">76.3%</div>
+                <div class="label">Leads que responderam à pesquisa de satisfação</div>
+            </div>
+            
+            <h3>Análise por Fonte</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Fonte</th>
+                        <th>Taxa de Resposta</th>
+                        <th>Total Leads</th>
+                        <th>Respostas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Facebook</td><td>82.1%</td><td>2,886</td><td>2,369</td></tr>
+                    <tr><td>Instagram</td><td>78.5%</td><td>2,062</td><td>1,619</td></tr>
+                    <tr><td>Google</td><td>71.2%</td><td>1,649</td><td>1,174</td></tr>
+                    <tr><td>Meta</td><td>73.8%</td><td>1,237</td><td>913</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Resultados da Pesquisa (Últimos 30 dias)</h3>
+            <div style="max-height: 300px; overflow-y: auto; margin-top: 15px;">
+                <table class="data-table">
+                    <thead style="position: sticky; top: 0; background: #1a1a1a;">
+                        <tr>
+                            <th>Data</th>
+                            <th>Leads Enviados</th>
+                            <th>Respostas</th>
+                            <th>Taxa</th>
+                            <th>Nota Média</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>11/09/2025</td><td>8.247</td><td>6.292</td><td>76.3%</td><td>8.7/10</td></tr>
+                        <tr><td>10/09/2025</td><td>8.120</td><td>6.184</td><td>76.2%</td><td>8.5/10</td></tr>
+                        <tr><td>09/09/2025</td><td>7.980</td><td>6.089</td><td>76.3%</td><td>8.8/10</td></tr>
+                        <tr><td>08/09/2025</td><td>7.850</td><td>5.988</td><td>76.3%</td><td>8.6/10</td></tr>
+                        <tr><td>07/09/2025</td><td>7.820</td><td>5.967</td><td>76.3%</td><td>8.9/10</td></tr>
+                    </tbody>
+                </table>
+                <div style="text-align: center; color: #888; padding: 10px; font-size: 12px;">
+                    Mostrando últimos 5 dias de 30 registros
+                </div>
+            </div>
+            
+            <h3>Distribuição das Respostas</h3>
+            <div class="metric-detail">
+                <h4>Satisfação Geral</h4>
+                <div class="value">8.7/10</div>
+                <div class="label">Nota média da pesquisa</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>Taxa de Recomendação</h4>
+                <div class="value">89.2%</div>
+                <div class="label">Recomendariam nossos serviços</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>Tempo de Resposta</h4>
+                <div class="value">2.3 dias</div>
+                <div class="label">Média para responder à pesquisa</div>
+            </div>
+            
+            <h3>Principais Feedback</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Frequência</th>
+                        <th>% das Respostas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Muito Satisfeito</td><td>4.821</td><td>76.6%</td></tr>
+                    <tr><td>Satisfeito</td><td>1.089</td><td>17.3%</td></tr>
+                    <tr><td>Neutro</td><td>245</td><td>3.9%</td></tr>
+                    <tr><td>Insatisfeito</td><td>89</td><td>1.4%</td></tr>
+                    <tr><td>Muito Insatisfeito</td><td>48</td><td>0.8%</td></tr>
+                </tbody>
+            </table>
+            
+            <canvas id="modal-pesquisa-chart" width="400" height="200"></canvas>
+        `
     }
 };
 
@@ -1183,7 +1276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Carregar métricas principais
 function loadMainMetrics() {
     const metrics = [
-        { selector: '.metric-value', values: ['8,247', '92.7%', '68.5%', 'R$ 12,50'] },
+        { selector: '.metric-value', values: ['8,247', '92.7%', '68.5%', 'R$ 12,50', '76.3%'] },
         { selector: '.conversion-value', values: ['1', '1', '0.012%'] }
     ];
     
@@ -1397,6 +1490,22 @@ function createModalCharts(metric) {
                     }]
                 },
                 options: chartConfigs.line
+            });
+        }
+    } else if (metric === 'resposta-pesquisa') {
+        const ctx = document.getElementById('modal-pesquisa-chart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Muito Satisfeito', 'Satisfeito', 'Neutro', 'Insatisfeito', 'Muito Insatisfeito'],
+                    datasets: [{
+                        data: [4821, 1089, 245, 89, 48],
+                        backgroundColor: ['#06d6a0', '#4ecdc4', '#ffe66d', '#ff6b6b', '#ee5a52'],
+                        borderWidth: 0
+                    }]
+                },
+                options: chartConfigs.doughnut
             });
         }
     } else if (metric === 'status-whatsapp') {
