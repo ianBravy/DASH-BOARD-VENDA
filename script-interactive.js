@@ -76,6 +76,61 @@ const dashboardData = {
             ],
             borderWidth: 0
         }]
+    },
+    
+    // Dados individuais para cada UTM
+    utmFacebookData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [2719, 167],
+            backgroundColor: ['#1877F2', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
+    },
+    
+    utmInstagramData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [1852, 210],
+            backgroundColor: ['#E1306C', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
+    },
+    
+    utmGoogleData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [1509, 140],
+            backgroundColor: ['#4285F4', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
+    },
+    
+    utmMetaData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [1152, 85],
+            backgroundColor: ['#FF6B35', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
+    },
+    
+    utmDirectData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [244, 3],
+            backgroundColor: ['#06d6a0', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
+    },
+    
+    utmFormularioData: {
+        labels: ['Válidos', 'Inválidos'],
+        datasets: [{
+            data: [161, 5],
+            backgroundColor: ['#9b59b6', 'rgba(255, 255, 255, 0.1)'],
+            borderWidth: 0
+        }]
     }
 };
 
@@ -1414,7 +1469,13 @@ function initializeCharts() {
             { id: 'leadsDayChart', type: 'radar', data: dashboardData.leadsDayData },
             { id: 'leadsHourChart', type: 'bar', data: dashboardData.leadsHourData },
             { id: 'comparisonChart', type: 'bar', data: dashboardData.comparisonData },
-            { id: 'utmChart', type: 'doughnut', data: dashboardData.utmData }
+            { id: 'utmChart', type: 'doughnut', data: dashboardData.utmData },
+            { id: 'utmFacebookChart', type: 'doughnut', data: dashboardData.utmFacebookData },
+            { id: 'utmInstagramChart', type: 'doughnut', data: dashboardData.utmInstagramData },
+            { id: 'utmGoogleChart', type: 'doughnut', data: dashboardData.utmGoogleData },
+            { id: 'utmMetaChart', type: 'doughnut', data: dashboardData.utmMetaData },
+            { id: 'utmDirectChart', type: 'doughnut', data: dashboardData.utmDirectData },
+            { id: 'utmFormularioChart', type: 'doughnut', data: dashboardData.utmFormularioData }
         ];
         
         charts.forEach(chart => {

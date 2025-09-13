@@ -105,22 +105,67 @@
         <!-- UTM Campaigns Analysis -->
         <section class="utm-section">
             <div class="utm-container clickable-card" data-metric="utm-campanhas">
-                <h3><i class="fas fa-chart-pie"></i> DISTRIBUIÇÃO POR UTM</h3>
-                <div class="utm-chart-container">
-                    <canvas id="utmChart"></canvas>
-                </div>
-                <div class="utm-summary">
-                    <div class="utm-item">
-                        <span class="utm-name">utm_source=facebook</span>
-                        <span class="utm-value">2,886 leads</span>
+                <h3><i class="fas fa-chart-pie"></i> ANÁLISE POR UTM</h3>
+                <div class="utm-charts-grid">
+                    <div class="utm-chart-item">
+                        <h4>Facebook</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmFacebookChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">2,886 leads</span>
+                            <span class="utm-percentage">35.0%</span>
+                        </div>
                     </div>
-                    <div class="utm-item">
-                        <span class="utm-name">utm_source=instagram</span>
-                        <span class="utm-value">2,062 leads</span>
+                    <div class="utm-chart-item">
+                        <h4>Instagram</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmInstagramChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">2,062 leads</span>
+                            <span class="utm-percentage">25.0%</span>
+                        </div>
                     </div>
-                    <div class="utm-item">
-                        <span class="utm-name">utm_source=google</span>
-                        <span class="utm-value">1,649 leads</span>
+                    <div class="utm-chart-item">
+                        <h4>Google</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmGoogleChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">1,649 leads</span>
+                            <span class="utm-percentage">20.0%</span>
+                        </div>
+                    </div>
+                    <div class="utm-chart-item">
+                        <h4>Meta</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmMetaChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">1,237 leads</span>
+                            <span class="utm-percentage">15.0%</span>
+                        </div>
+                    </div>
+                    <div class="utm-chart-item">
+                        <h4>Direct</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmDirectChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">247 leads</span>
+                            <span class="utm-percentage">3.0%</span>
+                        </div>
+                    </div>
+                    <div class="utm-chart-item">
+                        <h4>Formulário</h4>
+                        <div class="utm-chart-container">
+                            <canvas id="utmFormularioChart"></canvas>
+                        </div>
+                        <div class="utm-chart-summary">
+                            <span class="utm-total">166 leads</span>
+                            <span class="utm-percentage">2.0%</span>
+                        </div>
                     </div>
                 </div>
             </div>
