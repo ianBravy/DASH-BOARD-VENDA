@@ -923,11 +923,13 @@ body::after {
 
 .utm-chart-item h4 {
     color: #ffffff;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    word-break: break-all;
 }
 
 .utm-chart-container {
