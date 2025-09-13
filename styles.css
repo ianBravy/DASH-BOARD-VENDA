@@ -198,7 +198,7 @@ body::after {
 
 /* Search Section */
 .search-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .search-container {
@@ -277,7 +277,7 @@ body::after {
 
 /* Metrics Section */
 .metrics-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .metrics-grid {
@@ -338,7 +338,7 @@ body::after {
 
 /* Conversion Section */
 .conversion-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .conversion-grid {
@@ -385,7 +385,7 @@ body::after {
 
 /* Charts Section */
 .charts-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .charts-grid {
@@ -425,7 +425,7 @@ body::after {
 
 /* Funnel Section */
 .funnel-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .funnel-container {
@@ -503,22 +503,22 @@ body::after {
 
 /* Leads Day Section */
 .leads-day-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* Leads Hour Section */
 .leads-hour-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* Comparison Section */
 .comparison-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* Geographic Section */
 .geographic-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .geographic-container {
@@ -619,7 +619,7 @@ body::after {
 
 /* Top Sources Section */
 .top-sources-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .sources-grid {
@@ -696,7 +696,7 @@ body::after {
 
 /* Patrimonial Section */
 .patrimonial-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .patrimonial-container {
@@ -776,7 +776,7 @@ body::after {
 
 /* Priority Leads Section */
 .priority-leads-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .priority-container {
@@ -861,12 +861,12 @@ body::after {
 
 /* WhatsApp Section */
 .whatsapp-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 /* UTM Section */
 .utm-section {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .utm-container {
@@ -1099,7 +1099,7 @@ body::after {
 
 /* Final Statistics Section */
 .final-stats-section {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .stats-grid {
@@ -1149,8 +1149,8 @@ body::after {
 
 /* Update Section */
 .update-section {
-    margin-bottom: 50px;
-    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-top: 25px;
 }
 
 .update-container {
