@@ -53,6 +53,29 @@ const dashboardData = {
             backgroundColor: ['#1877F2', '#4285F4'],
             borderWidth: 0
         }]
+    },
+    
+    utmData: {
+        labels: [
+            'utm_source=facebook',
+            'utm_source=instagram', 
+            'utm_source=google',
+            'utm_source=meta',
+            'utm_source=direct',
+            'utm_source=formulario'
+        ],
+        datasets: [{
+            data: [2886, 2062, 1649, 1237, 247, 166],
+            backgroundColor: [
+                '#1877F2', // Facebook - Azul
+                '#E1306C', // Instagram - Rosa
+                '#4285F4', // Google - Azul claro
+                '#FF6B35', // Meta - Laranja
+                '#06d6a0', // Direto - Verde
+                '#9b59b6'  // Formulário - Roxo
+            ],
+            borderWidth: 0
+        }]
     }
 };
 
@@ -1263,6 +1286,98 @@ const metricDetails = {
             
             <canvas id="modal-pesquisa-chart" width="400" height="200"></canvas>
         `
+    },
+    
+    'utm-campanhas': {
+        title: 'Análise de Campanhas UTM - Distribuição por Fonte',
+        content: `
+            <div class="metric-detail">
+                <h4>Total de Leads por UTM</h4>
+                <div class="value">8,247</div>
+                <div class="label">Leads distribuídos por campanhas UTM</div>
+            </div>
+            
+            <h3>Distribuição Detalhada por UTM Source</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>UTM Source</th>
+                        <th>Leads</th>
+                        <th>% do Total</th>
+                        <th>Custo por Lead</th>
+                        <th>ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>facebook</td><td>2,886</td><td>35.0%</td><td>R$ 8,90</td><td>12.4x</td></tr>
+                    <tr><td>instagram</td><td>2,062</td><td>25.0%</td><td>R$ 15,20</td><td>7.2x</td></tr>
+                    <tr><td>google</td><td>1,649</td><td>20.0%</td><td>R$ 22,50</td><td>4.8x</td></tr>
+                    <tr><td>meta</td><td>1,237</td><td>15.0%</td><td>R$ 11,80</td><td>9.6x</td></tr>
+                    <tr><td>direct</td><td>247</td><td>3.0%</td><td>R$ 0,00</td><td>∞</td></tr>
+                    <tr><td>formulario</td><td>166</td><td>2.0%</td><td>R$ 5,50</td><td>18.2x</td></tr>
+                </tbody>
+            </table>
+            
+            <h3>Campanhas Mais Eficazes</h3>
+            <div class="metric-detail">
+                <h4>Melhor ROI</h4>
+                <div class="value">18.2x</div>
+                <div class="label">utm_source=formulario</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>Maior Volume</h4>
+                <div class="value">2,886 leads</div>
+                <div class="label">utm_source=facebook</div>
+            </div>
+            
+            <div class="metric-detail">
+                <h4>Custo Mais Baixo</h4>
+                <div class="value">R$ 5,50</div>
+                <div class="label">utm_source=formulario</div>
+            </div>
+            
+            <h3>Análise de Performance por UTM</h3>
+            <div style="max-height: 300px; overflow-y: auto; margin-top: 15px;">
+                <table class="data-table">
+                    <thead style="position: sticky; top: 0; background: #1a1a1a;">
+                        <tr>
+                            <th>UTM Source</th>
+                            <th>Taxa Conversão</th>
+                            <th>Leads Válidos</th>
+                            <th>Entraram Grupo</th>
+                            <th>Finalizaram</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>facebook</td><td>94.2%</td><td>2,719</td><td>1,863</td><td>3</td></tr>
+                        <tr><td>instagram</td><td>89.8%</td><td>1,852</td><td>1,268</td><td>2</td></tr>
+                        <tr><td>google</td><td>91.5%</td><td>1,509</td><td>1,034</td><td>1</td></tr>
+                        <tr><td>meta</td><td>93.1%</td><td>1,152</td><td>789</td><td>1</td></tr>
+                        <tr><td>direct</td><td>98.8%</td><td>244</td><td>167</td><td>0</td></tr>
+                        <tr><td>formulario</td><td>97.0%</td><td>161</td><td>110</td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Recomendações de Otimização</h3>
+            <div class="utm-recommendations">
+                <div class="recommendation-item">
+                    <strong>Facebook:</strong> Manter investimento - maior volume com bom ROI
+                </div>
+                <div class="recommendation-item">
+                    <strong>Formulário:</strong> Aumentar campanhas - melhor ROI do portfólio
+                </div>
+                <div class="recommendation-item">
+                    <strong>Google:</strong> Otimizar campanhas - custo alto com baixo ROI
+                </div>
+                <div class="recommendation-item">
+                    <strong>Instagram:</strong> Ajustar targeting - volume bom mas ROI médio
+                </div>
+            </div>
+            
+            <canvas id="modal-utm-chart" width="400" height="200"></canvas>
+        `
     }
 };
 
@@ -1298,7 +1413,8 @@ function initializeCharts() {
             { id: 'sourceChart', type: 'doughnut', data: dashboardData.sourceData },
             { id: 'leadsDayChart', type: 'radar', data: dashboardData.leadsDayData },
             { id: 'leadsHourChart', type: 'bar', data: dashboardData.leadsHourData },
-            { id: 'comparisonChart', type: 'bar', data: dashboardData.comparisonData }
+            { id: 'comparisonChart', type: 'bar', data: dashboardData.comparisonData },
+            { id: 'utmChart', type: 'doughnut', data: dashboardData.utmData }
         ];
         
         charts.forEach(chart => {
@@ -1505,6 +1621,15 @@ function createModalCharts(metric) {
                         borderWidth: 0
                     }]
                 },
+                options: chartConfigs.doughnut
+            });
+        }
+    } else if (metric === 'utm-campanhas') {
+        const ctx = document.getElementById('modal-utm-chart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: dashboardData.utmData,
                 options: chartConfigs.doughnut
             });
         }
