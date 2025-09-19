@@ -279,6 +279,48 @@ function initializeCharts() {
         data: dashboardData.comparisonData,
         options: chartConfigs.bar
     });
+    
+    // Inicializar gráficos UTM
+    initializeUTMCharts();
+}
+
+// Função para inicializar gráficos UTM
+function initializeUTMCharts() {
+    const utmSources = [
+        { id: 'utmFacebookChart', leads: 2886, color: '#4A90E2' },
+        { id: 'utmInstagramChart', leads: 2062, color: '#E1306C' },
+        { id: 'utmGoogleChart', leads: 1649, color: '#4285F4' },
+        { id: 'utmMetaChart', leads: 1237, color: '#1877F2' },
+        { id: 'utmDirectChart', leads: 247, color: '#06d6a0' },
+        { id: 'utmFormularioChart', leads: 166, color: '#9b59b6' }
+    ];
+    
+    utmSources.forEach(source => {
+        const canvas = document.getElementById(source.id);
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [source.leads, 8247 - source.leads],
+                        backgroundColor: [source.color, 'rgba(255,255,255,0.1)'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    cutout: '70%'
+                }
+            });
+        }
+    });
 }
 
 // Função para inicializar interatividade
