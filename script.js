@@ -896,11 +896,132 @@ function showGeneralModal(metric) {
                 <p>• Google tem boa performance orgânica</p>
             `;
             break;
+        case 'pre-checkout':
+            modalContent = `
+                <h2>🛒 Pré-Checkout</h2>
+                <div class="metric-detail">
+                    <h4>Total Atual</h4>
+                    <div class="value">247</div>
+                    <div class="label">Pessoas interessadas</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Taxa de Conversão:</strong> 3.0% (247 de 8.247 leads)</p>
+                <p><strong>Meta:</strong> 2.5%+ (Meta superada!)</p>
+                <p><strong>Tendência:</strong> +8.5% vs mês anterior</p>
+                <h3>📈 Breakdown por Fonte</h3>
+                <p>• Facebook: 87 pré-checkouts (35.2%)</p>
+                <p>• Instagram: 62 pré-checkouts (25.1%)</p>
+                <p>• Google: 49 pré-checkouts (19.8%)</p>
+                <p>• Meta: 37 pré-checkouts (15.0%)</p>
+                <p>• Outros: 12 pré-checkouts (4.9%)</p>
+                <h3>💡 Insights</h3>
+                <p>• Excelente qualificação de leads</p>
+                <p>• Alto interesse no produto/serviço</p>
+                <p>• Funil funcionando eficientemente</p>
+            `;
+            break;
+        case 'vendas':
+            modalContent = `
+                <h2>💰 Total de Vendas</h2>
+                <div class="metric-detail">
+                    <h4>Vendas Realizadas</h4>
+                    <div class="value">43</div>
+                    <div class="label">Conversões efetivadas</div>
+                </div>
+                <h3>📊 Breakdown por Categoria</h3>
+                <p><strong>Vendas SV:</strong> 18 vendas (41.9%)</p>
+                <p><strong>Vendas Croqui:</strong> 12 vendas (27.9%)</p>
+                <p><strong>Vendas Holding:</strong> 8 vendas (18.6%)</p>
+                <p><strong>Vendas Membership:</strong> 5 vendas (11.6%)</p>
+                <h3>💰 Receita por Categoria</h3>
+                <p>• SV: R$ 1.260.000 (44.3%)</p>
+                <p>• Croqui: R$ 840.000 (29.5%)</p>
+                <p>• Holding: R$ 560.000 (19.7%)</p>
+                <p>• Membership: R$ 187.500 (6.6%)</p>
+                <h3>📈 Performance</h3>
+                <p><strong>Receita Total:</strong> R$ 2.847.500</p>
+                <p><strong>Ticket Médio:</strong> R$ 66.221</p>
+                <p><strong>Taxa Conversão:</strong> 0.52% (43 de 8.247)</p>
+            `;
+            break;
+        case 'conversao-final':
+            modalContent = `
+                <h2>🎯 Conversão Final</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Final</h4>
+                    <div class="value">0.52%</div>
+                    <div class="label">43 vendas de 8.247 leads</div>
+                </div>
+                <h3>📊 Análise do Funil Completo</h3>
+                <p><strong>Leads:</strong> 8.247 (100.0%)</p>
+                <p><strong>Pré-checkout:</strong> 247 (3.0%)</p>
+                <p><strong>Vendas:</strong> 43 (0.52%)</p>
+                <p><strong>Eficiência Pré→Venda:</strong> 17.4%</p>
+                <h3>🎯 Benchmarks</h3>
+                <p>• Setor Jurídico: 0.3% - 0.8%</p>
+                <p>• Nossa Performance: 0.52% ✅</p>
+                <p>• Meta Interna: 0.5%+ (Atingida!)</p>
+                <h3>💡 Insights</h3>
+                <p>• Taxa dentro do esperado para o setor</p>
+                <p>• Qualidade alta dos leads gerados</p>
+                <p>• Processo de vendas eficiente</p>
+            `;
+            break;
+        case 'evolucao-data':
+            modalContent = `
+                <h2>📈 Evolução por Data</h2>
+                <div class="metric-detail">
+                    <h4>Período Analisado</h4>
+                    <div class="value">30 dias</div>
+                    <div class="label">Setembro 2025</div>
+                </div>
+                <h3>📊 Tendências Identificadas</h3>
+                <p><strong>Crescimento Médio:</strong> +15.3% vs agosto</p>
+                <p><strong>Melhor Dia:</strong> 15/09 (420 leads)</p>
+                <p><strong>Pior Dia:</strong> 03/09 (180 leads)</p>
+                <p><strong>Média Diária:</strong> 275 leads</p>
+                <h3>📅 Padrões Identificados</h3>
+                <p>• Início do mês: Performance alta</p>
+                <p>• Meio do mês: Estabilidade</p>
+                <p>• Final do mês: Crescimento acelerado</p>
+                <h3>🔮 Projeção</h3>
+                <p>• Meta Outubro: 9.500 leads</p>
+                <p>• Tendência: Crescimento sustentado</p>
+                <p>• Recomendação: Manter estratégia atual</p>
+            `;
+            break;
+        case 'distribuicao-fonte':
+            modalContent = `
+                <h2>🎯 Distribuição por Fonte</h2>
+                <div class="metric-detail">
+                    <h4>Total de Fontes</h4>
+                    <div class="value">6</div>
+                    <div class="label">Canais ativos</div>
+                </div>
+                <h3>📊 Performance Detalhada</h3>
+                <p><strong>Facebook:</strong> 2.886 leads (35.0%)</p>
+                <p><strong>Instagram:</strong> 2.062 leads (25.0%)</p>
+                <p><strong>Google:</strong> 1.649 leads (20.0%)</p>
+                <p><strong>Meta:</strong> 1.237 leads (15.0%)</p>
+                <p><strong>Direct:</strong> 247 leads (3.0%)</p>
+                <p><strong>Formulário:</strong> 166 leads (2.0%)</p>
+                <h3>💰 ROI por Fonte</h3>
+                <p>• Facebook: 4.2x ROI</p>
+                <p>• Instagram: 3.8x ROI</p>
+                <p>• Google: 5.1x ROI</p>
+                <p>• Meta: 3.9x ROI</p>
+                <h3>🎯 Recomendações</h3>
+                <p>• Aumentar investimento no Google (melhor ROI)</p>
+                <p>• Otimizar campanhas do Instagram</p>
+                <p>• Manter estratégia atual do Facebook</p>
+            `;
+            break;
         default:
             modalContent = `
                 <h2>📊 Métrica Selecionada</h2>
                 <p>Informações detalhadas sobre esta métrica estarão disponíveis em breve.</p>
                 <p><strong>Métrica:</strong> ${metric}</p>
+                <p>Esta métrica será implementada na próxima atualização do dashboard.</p>
             `;
     }
     
