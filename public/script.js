@@ -341,12 +341,19 @@ function initializeInteractivity() {
     
     // Adicionar cliques para TODOS os cards clicáveis
     const clickableCards = document.querySelectorAll('.clickable-card[data-metric]');
+    console.log('Cards encontrados:', clickableCards.length); // Debug
+    
     clickableCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
             const metric = this.getAttribute('data-metric');
-            if (card.classList.contains('marketing-card')) {
+            console.log('Card clicado:', metric); // Debug
+            
+            if (this.classList.contains('marketing-card')) {
+                console.log('Abrindo modal de marketing para:', metric); // Debug
                 showMarketingModal(metric);
             } else {
+                console.log('Abrindo modal geral para:', metric); // Debug
                 showGeneralModal(metric);
             }
         });
@@ -698,8 +705,14 @@ function typewriterEffect(element, finalValue, duration = 2000) {
 
 // Função para mostrar modal das métricas gerais
 function showGeneralModal(metric) {
+    console.log('showGeneralModal chamada para:', metric); // Debug
     const modal = document.getElementById('modal');
     const modalBody = document.getElementById('modal-body');
+    
+    if (!modal || !modalBody) {
+        console.error('Modal ou modalBody não encontrado!');
+        return;
+    }
     
     let modalContent = '';
     
@@ -783,6 +796,104 @@ function showGeneralModal(metric) {
                 <p>• Taxa clique→lead acima da média (2-4%)</p>
                 <p>• Alto engajamento no grupo WhatsApp</p>
                 <p>• Excelente taxa de resposta às pesquisas</p>
+            `;
+            break;
+        case 'entrou-grupo':
+            modalContent = `
+                <h2>💬 Entraram no Grupo</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Atual</h4>
+                    <div class="value">68.5%</div>
+                    <div class="label">5.649 de 8.247 leads</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Total no Grupo:</strong> 5.649 pessoas</p>
+                <p><strong>Não Entraram:</strong> 2.598 pessoas (31.5%)</p>
+                <p><strong>Meta:</strong> 70%+ (Próximo da meta)</p>
+                <h3>💡 Insights</h3>
+                <p>• Taxa de adesão muito boa (68.5%)</p>
+                <p>• Interesse alto no conteúdo oferecido</p>
+                <p>• Qualidade dos leads confirmada</p>
+            `;
+            break;
+        case 'custo-lead':
+            modalContent = `
+                <h2>💰 Custo Por Lead</h2>
+                <div class="metric-detail">
+                    <h4>Custo Atual</h4>
+                    <div class="value">R$ 12,50</div>
+                    <div class="label">Investimento por lead</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Investimento Total:</strong> R$ 103.125</p>
+                <p><strong>Total de Leads:</strong> 8.247</p>
+                <p><strong>Benchmark:</strong> R$ 8,00 - R$ 15,00</p>
+                <h3>📈 Por Fonte</h3>
+                <p>• Facebook: R$ 11,20 por lead</p>
+                <p>• Instagram: R$ 13,80 por lead</p>
+                <p>• Google: R$ 14,50 per lead</p>
+                <p>• Meta: R$ 10,90 por lead</p>
+            `;
+            break;
+        case 'resposta-pesquisa':
+            modalContent = `
+                <h2>📋 Responderam Pesquisa</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Atual</h4>
+                    <div class="value">76.3%</div>
+                    <div class="label">6.292 de 8.247 leads</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Responderam:</strong> 6.292 pessoas</p>
+                <p><strong>Não Responderam:</strong> 1.955 pessoas (23.7%)</p>
+                <p><strong>Meta:</strong> 70%+ (Meta superada!)</p>
+                <h3>💡 Insights</h3>
+                <p>• Excelente taxa de engajamento</p>
+                <p>• Leads altamente qualificados</p>
+                <p>• Interesse genuíno no produto/serviço</p>
+            `;
+            break;
+        case 'leads-dia-semana':
+            modalContent = `
+                <h2>📅 Leads por Dia da Semana</h2>
+                <div class="metric-detail">
+                    <h4>Análise Semanal</h4>
+                    <div class="value">8,247</div>
+                    <div class="label">Total de Leads</div>
+                </div>
+                <h3>📊 Distribuição Semanal</h3>
+                <p><strong>Segunda-feira:</strong> 1.180 leads (14.3%)</p>
+                <p><strong>Terça-feira:</strong> 1.200 leads (14.5%)</p>
+                <p><strong>Quarta-feira:</strong> 1.150 leads (13.9%)</p>
+                <p><strong>Quinta-feira:</strong> 1.100 leads (13.3%)</p>
+                <p><strong>Sexta-feira:</strong> 980 leads (11.9%)</p>
+                <p><strong>Sábado:</strong> 1.140 leads (13.8%)</p>
+                <p><strong>Domingo:</strong> 1.497 leads (18.2%)</p>
+                <h3>💡 Insights</h3>
+                <p>• Domingo é o melhor dia (18.2%)</p>
+                <p>• Sexta-feira tem menor volume (11.9%)</p>
+                <p>• Início da semana tem boa performance</p>
+            `;
+            break;
+        case 'utm-campanhas':
+            modalContent = `
+                <h2>🎯 Análise por UTM</h2>
+                <div class="metric-detail">
+                    <h4>Total de Campanhas</h4>
+                    <div class="value">6</div>
+                    <div class="label">Fontes Ativas</div>
+                </div>
+                <h3>📊 Performance por Fonte</h3>
+                <p><strong>Facebook:</strong> 2.886 leads (35.0%)</p>
+                <p><strong>Instagram:</strong> 2.062 leads (25.0%)</p>
+                <p><strong>Google:</strong> 1.649 leads (20.0%)</p>
+                <p><strong>Meta:</strong> 1.237 leads (15.0%)</p>
+                <p><strong>Direct:</strong> 247 leads (3.0%)</p>
+                <p><strong>Formulário:</strong> 166 leads (2.0%)</p>
+                <h3>💡 Insights</h3>
+                <p>• Facebook é a fonte líder (35%)</p>
+                <p>• Redes sociais dominam (75% do total)</p>
+                <p>• Google tem boa performance orgânica</p>
             `;
             break;
         default:
