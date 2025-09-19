@@ -1,16 +1,16 @@
-
-o fo de d{
+{
   "version": 2,
+  "name": "sessao-viabilidade",
   "builds": [
     {
       "src": "**/*",
       "use": "@vercel/static"
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
