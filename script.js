@@ -1,5 +1,66 @@
 // Dados falsos para o dashboard
 const dashboardData = {
+    // Dados das métricas de marketing
+    marketingData: {
+        cpc: {
+            value: 8.35,
+            currency: 'BRL',
+            trend: '+12.5%',
+            description: 'Custo por clique nos anúncios pagos',
+            benchmark: 'Meta do setor: R$ 6,50 - R$ 12,00',
+            performance: 'Dentro da meta'
+        },
+        cpm: {
+            value: 45.20,
+            currency: 'BRL',
+            trend: '-8.3%',
+            description: 'Custo por mil impressões',
+            benchmark: 'Meta do setor: R$ 35,00 - R$ 55,00',
+            performance: 'Dentro da meta'
+        },
+        ctr: {
+            value: 3.28,
+            unit: '%',
+            trend: '+15.2%',
+            description: 'Taxa de cliques nos anúncios',
+            benchmark: 'Meta do setor: 2,5% - 4,0%',
+            performance: 'Acima da média'
+        },
+        connectRate: {
+            value: 84.7,
+            unit: '%',
+            trend: '+5.1%',
+            description: 'Taxa de conexão bem-sucedida',
+            benchmark: 'Meta interna: 80%+',
+            performance: 'Excelente'
+        }
+    },
+    
+    // Dados do funil de conversão expandido
+    funnelData: {
+        leads: 8247,
+        preCheckout: 247,
+        vendasSV: 18,
+        vendasCroqui: 12,
+        vendasHolding: 8,
+        vendasMembership: 5,
+        totalVendas: 43,
+        receitaTotal: 2847500,
+        conversaoTotal: 0.52
+    },
+    
+    // Dados do funil de engajamento
+    engagementFunnelData: {
+        cliques: 124580,
+        leads: 8247,
+        entradaGrupo: 5649,
+        respostaPesquisa: 6292,
+        cpcMedio: 8.35,
+        taxaLeadClique: 6.6,
+        taxaEntradaGrupo: 68.5,
+        taxaResposta: 76.3
+    },
+    
     // Dados para evolução por data
     evolutionData: {
         labels: ['2025-07-22', '2025-07-24', '2025-07-26', '2025-07-28', '2025-07-30', '2025-08-01', '2025-08-03', '2025-08-05', '2025-08-07'],
@@ -222,8 +283,8 @@ function initializeCharts() {
 
 // Função para inicializar interatividade
 function initializeInteractivity() {
-    // Animações nos cards ao hover
-    const cards = document.querySelectorAll('.metric-card, .conversion-card, .patrimonial-card');
+    // Animações nos cards ao hover (incluindo marketing cards)
+    const cards = document.querySelectorAll('.metric-card, .conversion-card, .patrimonial-card, .marketing-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-5px) scale(1.02)';
@@ -231,6 +292,15 @@ function initializeInteractivity() {
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Adicionar cliques para as métricas de marketing
+    const marketingCards = document.querySelectorAll('.marketing-card[data-metric]');
+    marketingCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const metric = this.getAttribute('data-metric');
+            showMarketingModal(metric);
         });
     });
     
@@ -576,6 +646,124 @@ function typewriterEffect(element, finalValue, duration = 2000) {
             element.textContent = Math.round(currentValue).toLocaleString();
         }
     }, 16);
+}
+
+// Função para mostrar modal das métricas de marketing
+function showMarketingModal(metric) {
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    
+    const data = dashboardData.marketingData[metric];
+    if (!data) return;
+    
+    let modalContent = '';
+    
+    switch(metric) {
+        case 'cpc':
+            modalContent = `
+                <h2>💰 CPC - Custo Por Clique</h2>
+                <div class="metric-detail">
+                    <h4>Valor Atual</h4>
+                    <div class="value">R$ ${data.value.toFixed(2)}</div>
+                    <div class="label">Tendência: ${data.trend}</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Descrição:</strong> ${data.description}</p>
+                <p><strong>Benchmark:</strong> ${data.benchmark}</p>
+                <p><strong>Performance:</strong> ${data.performance}</p>
+                <h3>💡 Insights</h3>
+                <p>• O CPC atual está dentro da faixa esperada para o setor</p>
+                <p>• Tendência positiva indica aumento na concorrência</p>
+                <p>• Recomenda-se otimizar palavras-chave e segmentação</p>
+                <h3>🎯 Recomendações</h3>
+                <p>• Revisar palavras-chave de baixa performance</p>
+                <p>• Testar novos grupos de anúncios</p>
+                <p>• Melhorar Quality Score dos anúncios</p>
+            `;
+            break;
+        case 'cpm':
+            modalContent = `
+                <h2>👁️ CPM - Custo Por Mil Impressões</h2>
+                <div class="metric-detail">
+                    <h4>Valor Atual</h4>
+                    <div class="value">R$ ${data.value.toFixed(2)}</div>
+                    <div class="label">Tendência: ${data.trend}</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Descrição:</strong> ${data.description}</p>
+                <p><strong>Benchmark:</strong> ${data.benchmark}</p>
+                <p><strong>Performance:</strong> ${data.performance}</p>
+                <h3>💡 Insights</h3>
+                <p>• CPM em queda indica boa otimização de público</p>
+                <p>• Valor competitivo no mercado atual</p>
+                <p>• Alcance eficiente do público-alvo</p>
+                <h3>🎯 Recomendações</h3>
+                <p>• Manter estratégia atual de segmentação</p>
+                <p>• Expandir públicos similares de alta performance</p>
+                <p>• Testar novos formatos de anúncio</p>
+            `;
+            break;
+        case 'ctr':
+            modalContent = `
+                <h2>📈 CTR - Taxa de Cliques</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Atual</h4>
+                    <div class="value">${data.value}${data.unit}</div>
+                    <div class="label">Tendência: ${data.trend}</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Descrição:</strong> ${data.description}</p>
+                <p><strong>Benchmark:</strong> ${data.benchmark}</p>
+                <p><strong>Performance:</strong> ${data.performance}</p>
+                <h3>💡 Insights</h3>
+                <p>• CTR acima da média indica alta relevância dos anúncios</p>
+                <p>• Crescimento constante na taxa de engajamento</p>
+                <p>• Público bem segmentado e interessado</p>
+                <h3>🎯 Recomendações</h3>
+                <p>• Continuar com criativos de alta performance</p>
+                <p>• Expandir campanhas similares</p>
+                <p>• Testar variações de copy e imagens</p>
+            `;
+            break;
+        case 'connect-rate':
+            modalContent = `
+                <h2>🔗 Connect Rate - Taxa de Conexão</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Atual</h4>
+                    <div class="value">${data.value}${data.unit}</div>
+                    <div class="label">Tendência: ${data.trend}</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Descrição:</strong> ${data.description}</p>
+                <p><strong>Benchmark:</strong> ${data.benchmark}</p>
+                <p><strong>Performance:</strong> ${data.performance}</p>
+                <h3>💡 Insights</h3>
+                <p>• Taxa excelente de conexão com leads</p>
+                <p>• Qualidade alta na segmentação de público</p>
+                <p>• Processo de follow-up eficiente</p>
+                <h3>🎯 Recomendações</h3>
+                <p>• Manter estratégia atual de abordagem</p>
+                <p>• Documentar processos de sucesso</p>
+                <p>• Treinar equipe com base nas melhores práticas</p>
+            `;
+            break;
+    }
+    
+    modalBody.innerHTML = modalContent;
+    modal.style.display = 'block';
+    
+    // Fechar modal ao clicar no X
+    const closeBtn = modal.querySelector('.close');
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    // Fechar modal ao clicar fora
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 }
 
 // Aplicar efeito de digitação nos valores principais - DESABILITADO PARA PERFORMANCE
