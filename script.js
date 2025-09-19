@@ -1038,6 +1038,172 @@ function showGeneralModal(metric) {
                 <p>• Manter estratégia atual do Facebook</p>
             `;
             break;
+        case 'leads-hora':
+            modalContent = `
+                <h2>⏰ Leads por Hora</h2>
+                <div class="metric-detail">
+                    <h4>Análise por Horário</h4>
+                    <div class="value">24h</div>
+                    <div class="label">Cobertura completa</div>
+                </div>
+                <h3>📊 Performance por Período</h3>
+                <p><strong>Madrugada (0h-6h):</strong> 520 leads (6.3%)</p>
+                <p><strong>Manhã (6h-12h):</strong> 1.980 leads (24.0%)</p>
+                <p><strong>Tarde (12h-18h):</strong> 3.300 leads (40.0%)</p>
+                <p><strong>Noite (18h-24h):</strong> 2.447 leads (29.7%)</p>
+                <h3>🎯 Picos de Performance</h3>
+                <p>• <strong>Melhor hora:</strong> 15h (420 leads)</p>
+                <p>• <strong>Pior hora:</strong> 4h (45 leads)</p>
+                <p>• <strong>Horário nobre:</strong> 14h-17h (35% do total)</p>
+            `;
+            break;
+        case 'meta-vs-google':
+            modalContent = `
+                <h2>⚔️ Meta vs Google</h2>
+                <div class="metric-detail">
+                    <h4>Comparativo Direto</h4>
+                    <div class="value">vs</div>
+                    <div class="label">Meta vs Google</div>
+                </div>
+                <h3>📊 Performance Comparativa</h3>
+                <p><strong>Meta (Facebook + Instagram):</strong> 4.948 leads (60.0%)</p>
+                <p><strong>Google:</strong> 1.649 leads (20.0%)</p>
+                <p><strong>Vantagem Meta:</strong> +200.0% em volume</p>
+                <h3>💰 Análise de Custo</h3>
+                <p>• <strong>CPC Meta:</strong> R$ 8,90</p>
+                <p>• <strong>CPC Google:</strong> R$ 12,30</p>
+                <p>• <strong>ROI Meta:</strong> 4.1x</p>
+                <p>• <strong>ROI Google:</strong> 5.1x</p>
+                <h3>🎯 Recomendação</h3>
+                <p>Google tem melhor ROI, Meta tem maior volume</p>
+            `;
+            break;
+        case 'analise-geografica':
+            modalContent = `
+                <h2>🌍 Análise Geográfica</h2>
+                <div class="metric-detail">
+                    <h4>Cobertura Nacional</h4>
+                    <div class="value">27</div>
+                    <div class="label">Estados atendidos</div>
+                </div>
+                <h3>📊 Top 5 Estados</h3>
+                <p><strong>1. São Paulo:</strong> 1.878 leads (22.8%)</p>
+                <p><strong>2. Rio de Janeiro:</strong> 1.527 leads (18.5%)</p>
+                <p><strong>3. Minas Gerais:</strong> 868 leads (10.5%)</p>
+                <p><strong>4. Bahia:</strong> 666 leads (8.1%)</p>
+                <p><strong>5. Pernambuco:</strong> 467 leads (5.7%)</p>
+                <h3>💡 Insights Regionais</h3>
+                <p>• Sudeste domina com 52.8% dos leads</p>
+                <p>• Nordeste representa 23.1%</p>
+                <p>• Potencial de crescimento no Sul</p>
+            `;
+            break;
+        case 'top-fontes':
+            modalContent = `
+                <h2>🏆 Top Fontes</h2>
+                <div class="metric-detail">
+                    <h4>Ranking Completo</h4>
+                    <div class="value">6</div>
+                    <div class="label">Fontes ativas</div>
+                </div>
+                <h3>📊 Ranking Detalhado</h3>
+                <p><strong>🥇 Google:</strong> 4.620 leads (56.0%)</p>
+                <p><strong>🥈 Instagram:</strong> 1.990 leads (24.1%)</p>
+                <p><strong>🥉 Facebook:</strong> 1.450 leads (17.6%)</p>
+                <p><strong>4º Meta:</strong> 82 leads (1.0%)</p>
+                <p><strong>5º Formulário:</strong> 105 leads (1.3%)</p>
+                <h3>📈 Performance vs Investimento</h3>
+                <p>• Google: Melhor ROI (5.2x)</p>
+                <p>• Instagram: Melhor engajamento</p>
+                <p>• Facebook: Mais conversões</p>
+            `;
+            break;
+        case 'top-anuncios':
+            modalContent = `
+                <h2>📢 Top Anúncios</h2>
+                <div class="metric-detail">
+                    <h4>Campanhas Ativas</h4>
+                    <div class="value">12</div>
+                    <div class="label">Anúncios rodando</div>
+                </div>
+                <h3>📊 Ranking de Performance</h3>
+                <p><strong>🥇 AD94-:</strong> 3.500 leads (42.4%)</p>
+                <p><strong>🥈 766064...:</strong> 1.500 leads (18.2%)</p>
+                <p><strong>🥉 767401...:</strong> 1.400 leads (17.0%)</p>
+                <p><strong>4º AD63+-...:</strong> 1.200 leads (14.5%)</p>
+                <p><strong>5º 767401...:</strong> 647 leads (7.8%)</p>
+                <h3>💰 ROI por Anúncio</h3>
+                <p>• AD94-: 6.2x ROI (Melhor performer)</p>
+                <p>• 766064: 4.8x ROI</p>
+                <p>• 767401: 5.1x ROI</p>
+            `;
+            break;
+        case 'inteligencia-patrimonial':
+            modalContent = `
+                <h2>💎 Inteligência Patrimonial</h2>
+                <div class="metric-detail">
+                    <h4>Análise Completa</h4>
+                    <div class="value">8,247</div>
+                    <div class="label">Leads analisados</div>
+                </div>
+                <h3>📊 Classificação Patrimonial</h3>
+                <p><strong>Alto Patrimônio:</strong> 8.227 pessoas (99.8%)</p>
+                <p><strong>Urgência Alta:</strong> 1.979 pessoas (24.0%)</p>
+                <p><strong>Interessados:</strong> 6.655 pessoas (80.7%)</p>
+                <p><strong>Qualificados:</strong> 8.247 pessoas (100%)</p>
+                <h3>💡 Insights Estratégicos</h3>
+                <p>• 99.8% têm alto patrimônio (excelente qualificação)</p>
+                <p>• 24% têm urgência alta (prioridade máxima)</p>
+                <p>• 80.7% demonstram interesse real</p>
+                <h3>🎯 Oportunidade</h3>
+                <p><strong>Potencial de receita:</strong> R$ 15+ milhões</p>
+            `;
+            break;
+        case 'leads-prioritarios':
+            modalContent = `
+                <h2>🚨 Leads Prioritários</h2>
+                <div class="metric-detail">
+                    <h4>Lista Urgente</h4>
+                    <div class="value">1,979</div>
+                    <div class="label">Leads de alta prioridade</div>
+                </div>
+                <h3>📊 Critérios de Priorização</h3>
+                <p><strong>Urgência Alta:</strong> 1.979 leads (24.0%)</p>
+                <p><strong>Alto Patrimônio:</strong> 8.227 leads (99.8%)</p>
+                <p><strong>Interessados:</strong> 6.655 leads (80.7%)</p>
+                <h3>⚡ Ações Recomendadas</h3>
+                <p>• Contato imediato com urgência alta</p>
+                <p>• Follow-up em 24h máximo</p>
+                <p>• Abordagem personalizada</p>
+                <p>• Priorizar agendamentos</p>
+                <h3>📞 Próximos Passos</h3>
+                <p>5 leads mostrados precisam de atenção IMEDIATA</p>
+            `;
+            break;
+        case 'status-whatsapp':
+            modalContent = `
+                <h2>📱 Status WhatsApp</h2>
+                <div class="metric-detail">
+                    <h4>Grupos Ativos</h4>
+                    <div class="value">2</div>
+                    <div class="label">Grupos funcionando</div>
+                </div>
+                <h3>📊 Performance dos Grupos</h3>
+                <p><strong>Grupo #1:</strong> 226 membros (7 admins)</p>
+                <p><strong>Taxa de Atividade:</strong> 85% (Excelente)</p>
+                <p><strong>Grupo #2:</strong> 214 membros (7 admins)</p>
+                <p><strong>Taxa de Atividade:</strong> 78% (Muito Boa)</p>
+                <h3>📈 Métricas de Engajamento</h3>
+                <p>• <strong>Total de Membros:</strong> 440 pessoas</p>
+                <p>• <strong>Taxa de Entrada:</strong> 68.5%</p>
+                <p>• <strong>Taxa de Permanência:</strong> 92.3%</p>
+                <p>• <strong>Interações Diárias:</strong> 150+ mensagens</p>
+                <h3>💡 Insights</h3>
+                <p>• Grupos muito ativos e engajados</p>
+                <p>• Alta retenção de membros</p>
+                <p>• Conteúdo de qualidade mantém interesse</p>
+            `;
+            break;
         default:
             modalContent = `
                 <h2>📊 Métrica Selecionada</h2>
