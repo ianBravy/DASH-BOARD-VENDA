@@ -7,9 +7,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%);
-    color: #ffffff;
-    min-height: 100vh;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%) !important;
+    color: #ffffff !important;
+    min-height: 100vh !important;
     overflow-x: hidden;
     position: relative;
 }
@@ -118,7 +118,7 @@ body::after {
 
 /* Header */
 .header {
-    background: #1a1a1a;
+    background: #1a1a1a !important;
     padding: 15px 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -194,6 +194,7 @@ body::after {
     margin: 0 auto;
     padding: 10px;
     padding-bottom: 20px;
+    background: transparent !important;
 }
 
 /* Search Section */
@@ -2168,4 +2169,65 @@ body::after {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #b8860b 0%, #ffffff 100%);
+}
+
+/* Fix específico para mobile - força tema escuro */
+@media (max-width: 768px) {
+    html {
+        background: #000000 !important;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2a2a2a 100%) !important;
+        color: #ffffff !important;
+        min-height: 100vh !important;
+    }
+    
+    .header {
+        background: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+    
+    .dashboard {
+        background: transparent !important;
+        color: #ffffff !important;
+    }
+    
+    .metric-card, .marketing-card, .conversion-card, .patrimonial-card {
+        background: rgba(255, 255, 255, 0.12) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .metric-value, .marketing-value, .conversion-value, .patrimonial-value {
+        color: #ffffff !important;
+    }
+    
+    .metric-label, .marketing-label, .conversion-label, .patrimonial-label {
+        color: #ffffff !important;
+    }
+    
+    .search-container, .utm-container, .marketing-container {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff !important;
+    }
+    
+    p, span, div {
+        color: #ffffff !important;
+    }
+    
+    .search-input, .search-select {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    }
+    
+    .chart-container, .funnel-container, .engagement-funnel-container {
+        background: rgba(255, 255, 255, 0.08) !important;
+        color: #ffffff !important;
+    }
 }
