@@ -46,7 +46,9 @@ const dashboardData = {
         vendasMembership: 5,
         totalVendas: 43,
         receitaTotal: 2847500,
-        conversaoTotal: 0.52
+        conversaoTotal: 0.52,
+        conversaoPreCheckout: 3.0,
+        conversaoFinal: 0.52
     },
     
     // Dados do funil de engajamento
@@ -755,8 +757,13 @@ function showGeneralModal(metric) {
                 <p><strong>Vendas Croqui:</strong> 12 (0.15%)</p>
                 <p><strong>Vendas Holding:</strong> 8 (0.10%)</p>
                 <p><strong>Vendas Membership:</strong> 5 (0.06%)</p>
+                <p><strong>Total Vendas:</strong> 43 (0.52%)</p>
                 <h3>💰 Receita Total</h3>
                 <p><strong>R$ 2.847.500</strong> (+15.8%)</p>
+                <h3>📈 Performance</h3>
+                <p>• Taxa de pré-checkout: 3.0% (247 de 8.247)</p>
+                <p>• Taxa de conversão final: 0.52% (43 de 8.247)</p>
+                <p>• Taxa pré-checkout → venda: 17.4% (43 de 247)</p>
             `;
             break;
         case 'funil-engajamento':
