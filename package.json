@@ -1,26 +1,13 @@
 {
-  "name": "dashboard-vendas-bravy",
-  "version": "2.0.0",
-  "description": "Dashboard de Vendas Interativo - BRVY®",
-  "main": "index.html",
+  "name": "sessao-viabilidade",
+  "version": "1.0.0",
+  "description": "Dashboard de Vendas BRVY",
+  "main": "public/index.html",
   "scripts": {
-    "dev": "python3 -m http.server 8080",
-    "build": "echo 'Build completed - BRVY® Dashboard'",
-    "start": "python3 -m http.server 8080",
-    "deploy": "vercel --prod"
+    "build": "echo 'Static site - no build needed'",
+    "start": "echo 'Static site ready'"
   },
-  "keywords": [
-    "dashboard",
-    "vendas",
-    "brvy",
-    "analytics",
-    "leads"
-  ],
-  "author": "BRVY®",
-  "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  "keywords": ["dashboard", "vendas", "analytics"],
+  "author": "BRVY",
+  "license": "MIT"
 }
