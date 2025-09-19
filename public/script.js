@@ -337,12 +337,16 @@ function initializeInteractivity() {
         });
     });
     
-    // Adicionar cliques para as métricas de marketing
-    const marketingCards = document.querySelectorAll('.marketing-card[data-metric]');
-    marketingCards.forEach(card => {
+    // Adicionar cliques para TODOS os cards clicáveis
+    const clickableCards = document.querySelectorAll('.clickable-card[data-metric]');
+    clickableCards.forEach(card => {
         card.addEventListener('click', function() {
             const metric = this.getAttribute('data-metric');
-            showMarketingModal(metric);
+            if (card.classList.contains('marketing-card')) {
+                showMarketingModal(metric);
+            } else {
+                showGeneralModal(metric);
+            }
         });
     });
     
@@ -688,6 +692,115 @@ function typewriterEffect(element, finalValue, duration = 2000) {
             element.textContent = Math.round(currentValue).toLocaleString();
         }
     }, 16);
+}
+
+// Função para mostrar modal das métricas gerais
+function showGeneralModal(metric) {
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    
+    let modalContent = '';
+    
+    switch(metric) {
+        case 'total-leads':
+            modalContent = `
+                <h2>👥 Total de Leads</h2>
+                <div class="metric-detail">
+                    <h4>Valor Atual</h4>
+                    <div class="value">8,247</div>
+                    <div class="label">Leads Captados</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Período:</strong> Setembro 2025</p>
+                <p><strong>Crescimento:</strong> +15.3% vs mês anterior</p>
+                <p><strong>Meta:</strong> 8.000 leads (Meta superada!)</p>
+                <h3>📈 Distribuição por Fonte</h3>
+                <p>• Facebook: 2.886 leads (35.0%)</p>
+                <p>• Instagram: 2.062 leads (25.0%)</p>
+                <p>• Google: 1.649 leads (20.0%)</p>
+                <p>• Meta: 1.237 leads (15.0%)</p>
+                <p>• Outros: 413 leads (5.0%)</p>
+            `;
+            break;
+        case 'whatsapp-validos':
+            modalContent = `
+                <h2>📱 WhatsApp Válidos</h2>
+                <div class="metric-detail">
+                    <h4>Taxa Atual</h4>
+                    <div class="value">92.7%</div>
+                    <div class="label">Números Válidos</div>
+                </div>
+                <h3>📊 Análise Detalhada</h3>
+                <p><strong>Total Válidos:</strong> 7.645 números</p>
+                <p><strong>Total Inválidos:</strong> 602 números</p>
+                <p><strong>Benchmark:</strong> Meta interna 90%+</p>
+                <h3>💡 Insights</h3>
+                <p>• Taxa excelente de números válidos</p>
+                <p>• Qualidade alta na captura de leads</p>
+                <p>• Processo de validação eficiente</p>
+            `;
+            break;
+        case 'funil-conversao':
+            modalContent = `
+                <h2>📈 Funil de Conversão</h2>
+                <div class="metric-detail">
+                    <h4>Taxa de Conversão Total</h4>
+                    <div class="value">0.52%</div>
+                    <div class="label">43 vendas de 8.247 leads</div>
+                </div>
+                <h3>📊 Detalhamento do Funil</h3>
+                <p><strong>Leads:</strong> 8.247 (100%)</p>
+                <p><strong>Pré-checkout:</strong> 247 (3.0%)</p>
+                <p><strong>Vendas SV:</strong> 18 (0.22%)</p>
+                <p><strong>Vendas Croqui:</strong> 12 (0.15%)</p>
+                <p><strong>Vendas Holding:</strong> 8 (0.10%)</p>
+                <p><strong>Vendas Membership:</strong> 5 (0.06%)</p>
+                <h3>💰 Receita Total</h3>
+                <p><strong>R$ 2.847.500</strong> (+15.8%)</p>
+            `;
+            break;
+        case 'funil-engajamento':
+            modalContent = `
+                <h2>🎯 Funil de Engajamento</h2>
+                <div class="metric-detail">
+                    <h4>Performance Geral</h4>
+                    <div class="value">6.6%</div>
+                    <div class="label">Taxa Clique → Lead</div>
+                </div>
+                <h3>📊 Detalhamento Completo</h3>
+                <p><strong>Cliques:</strong> 124.580 (100%)</p>
+                <p><strong>Leads:</strong> 8.247 (6.6%)</p>
+                <p><strong>Entraram no Grupo:</strong> 5.649 (68.5%)</p>
+                <p><strong>Responderam Pesquisa:</strong> 6.292 (76.3%)</p>
+                <h3>💡 Insights</h3>
+                <p>• Taxa clique→lead acima da média (2-4%)</p>
+                <p>• Alto engajamento no grupo WhatsApp</p>
+                <p>• Excelente taxa de resposta às pesquisas</p>
+            `;
+            break;
+        default:
+            modalContent = `
+                <h2>📊 Métrica Selecionada</h2>
+                <p>Informações detalhadas sobre esta métrica estarão disponíveis em breve.</p>
+                <p><strong>Métrica:</strong> ${metric}</p>
+            `;
+    }
+    
+    modalBody.innerHTML = modalContent;
+    modal.style.display = 'block';
+    
+    // Fechar modal ao clicar no X
+    const closeBtn = modal.querySelector('.close');
+    closeBtn.onclick = function() {
+        modal.style.display = 'none';
+    }
+    
+    // Fechar modal ao clicar fora
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
 }
 
 // Função para mostrar modal das métricas de marketing
