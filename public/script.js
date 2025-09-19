@@ -235,9 +235,31 @@ const chartConfigs = {
 
 // Inicializar gráficos quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado, iniciando funcionalidades...');
     initializeCharts();
     initializeInteractivity();
     startAutoRefresh();
+    
+    // Debug: Verificar se todos os elementos existem
+    setTimeout(() => {
+        const modal = document.getElementById('modal');
+        const modalBody = document.getElementById('modal-body');
+        const clickableCards = document.querySelectorAll('.clickable-card[data-metric]');
+        
+        console.log('Modal encontrado:', !!modal);
+        console.log('Modal body encontrado:', !!modalBody);
+        console.log('Cards clicáveis encontrados:', clickableCards.length);
+        
+        clickableCards.forEach((card, index) => {
+            console.log(`Card ${index + 1}:`, card.getAttribute('data-metric'), card.className);
+        });
+        
+        // Se poucos cards foram encontrados, tentar método alternativo
+        if (clickableCards.length < 15) {
+            console.log('Poucos cards encontrados, tentando método alternativo...');
+            addModalListeners();
+        }
+    }, 1000);
 });
 
 // Função para inicializar todos os gráficos
@@ -1030,8 +1052,10 @@ function showGeneralModal(metric) {
     
     // Fechar modal ao clicar no X
     const closeBtn = modal.querySelector('.close');
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
     }
     
     // Fechar modal ao clicar fora
@@ -1040,6 +1064,37 @@ function showGeneralModal(metric) {
             modal.style.display = 'none';
         }
     }
+}
+
+// Função alternativa para adicionar event listeners (fallback)
+function addModalListeners() {
+    console.log('Adicionando event listeners alternativos...');
+    
+    // Tentar novamente após um delay
+    setTimeout(() => {
+        const allCards = document.querySelectorAll('[data-metric]');
+        console.log('Total de cards com data-metric encontrados:', allCards.length);
+        
+        allCards.forEach(card => {
+            // Remover listeners existentes e adicionar novos
+            const newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            
+            newCard.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const metric = this.getAttribute('data-metric');
+                console.log('Card clicado (fallback):', metric);
+                
+                if (this.classList.contains('marketing-card')) {
+                    showMarketingModal(metric);
+                } else {
+                    showGeneralModal(metric);
+                }
+            });
+        });
+    }, 2000);
 }
 
 // Função para mostrar modal das métricas de marketing
